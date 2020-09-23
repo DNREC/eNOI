@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="CROMTOMService" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="CROMTOMService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="CROMTOMService">
+      <s:element name="UploadDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buffer" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadDocumentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SaveFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LocalFileHash" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReportID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PiID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddressUsed" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SequenceRef" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveFileResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="buffer" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReportID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PiID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddressUsed" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SequenceRef" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumberOfSignatures" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthorizedSignatoryEmailAddresses" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUpdateProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProjectDesc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReportID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProjectID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUpdateProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUpdateProjectResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileSize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFileSizeResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckFileHash">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckFileHashResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckFileHashResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ping">
+        <s:complexType />
+      </s:element>
+      <s:element name="PingResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AuthenticateToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthenticateTokenResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthPiID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnUserResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthPiID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PiID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReportTypeID" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="SequenceRef" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocumentStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocumentStatusResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeStatus_Repudiate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PiID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReportTypeID" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="SequenceRef" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeStatus_RepudiateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeStatus_RepudiateResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeStatus_Reject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PiID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReportTypeID" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="SequenceRef" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeStatus_RejectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeStatus_RejectResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeStatus_Expire">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PiID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReportTypeID" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="SequenceRef" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeStatus_ExpireResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeStatus_ExpireResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthPiID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnUserInfoResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthPiID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnUserInfoByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnUserInfoByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnUserInfoByUserIDResult" />
+            <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdminGroupEmailByReportID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reportid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdminGroupEmailByReportIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAdminGroupEmailByReportIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdminDeptDetailsByReportID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="reportid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="deptname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAdminDeptDetailsByReportIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadDocument" />
+  </wsdl:message>
+  <wsdl:message name="UploadDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFileSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFile" />
+  </wsdl:message>
+  <wsdl:message name="SaveFileSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitDocument" />
+  </wsdl:message>
+  <wsdl:message name="SubmitDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdateProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUpdateProject" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdateProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUpdateProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileSize" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckFileHashSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckFileHash" />
+  </wsdl:message>
+  <wsdl:message name="CheckFileHashSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckFileHashResponse" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapIn">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapOut">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateToken" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnUser" />
+  </wsdl:message>
+  <wsdl:message name="ReturnUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:DocumentStatus" />
+  </wsdl:message>
+  <wsdl:message name="DocumentStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:DocumentStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeStatus_RepudiateSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeStatus_Repudiate" />
+  </wsdl:message>
+  <wsdl:message name="ChangeStatus_RepudiateSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeStatus_RepudiateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeStatus_RejectSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeStatus_Reject" />
+  </wsdl:message>
+  <wsdl:message name="ChangeStatus_RejectSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeStatus_RejectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeStatus_ExpireSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeStatus_Expire" />
+  </wsdl:message>
+  <wsdl:message name="ChangeStatus_ExpireSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeStatus_ExpireResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReturnUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnUserInfoByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnUserInfoByUserID" />
+  </wsdl:message>
+  <wsdl:message name="ReturnUserInfoByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnUserInfoByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminGroupEmailByReportIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAdminGroupEmailByReportID" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminGroupEmailByReportIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAdminGroupEmailByReportIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminDeptDetailsByReportIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAdminDeptDetailsByReportID" />
+  </wsdl:message>
+  <wsdl:message name="GetAdminDeptDetailsByReportIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAdminDeptDetailsByReportIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsCROMTOMSoap">
+    <wsdl:operation name="UploadDocument">
+      <wsdl:input message="tns:UploadDocumentSoapIn" />
+      <wsdl:output message="tns:UploadDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFile">
+      <wsdl:input message="tns:SaveFileSoapIn" />
+      <wsdl:output message="tns:SaveFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDocument">
+      <wsdl:input message="tns:SubmitDocumentSoapIn" />
+      <wsdl:output message="tns:SubmitDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdateProject">
+      <wsdl:input message="tns:AddUpdateProjectSoapIn" />
+      <wsdl:output message="tns:AddUpdateProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSize">
+      <wsdl:input message="tns:GetFileSizeSoapIn" />
+      <wsdl:output message="tns:GetFileSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckFileHash">
+      <wsdl:input message="tns:CheckFileHashSoapIn" />
+      <wsdl:output message="tns:CheckFileHashSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input message="tns:PingSoapIn" />
+      <wsdl:output message="tns:PingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateToken">
+      <wsdl:input message="tns:AuthenticateTokenSoapIn" />
+      <wsdl:output message="tns:AuthenticateTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUser">
+      <wsdl:input message="tns:ReturnUserSoapIn" />
+      <wsdl:output message="tns:ReturnUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocumentStatus">
+      <wsdl:input message="tns:DocumentStatusSoapIn" />
+      <wsdl:output message="tns:DocumentStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatus_Repudiate">
+      <wsdl:input message="tns:ChangeStatus_RepudiateSoapIn" />
+      <wsdl:output message="tns:ChangeStatus_RepudiateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatus_Reject">
+      <wsdl:input message="tns:ChangeStatus_RejectSoapIn" />
+      <wsdl:output message="tns:ChangeStatus_RejectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatus_Expire">
+      <wsdl:input message="tns:ChangeStatus_ExpireSoapIn" />
+      <wsdl:output message="tns:ChangeStatus_ExpireSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUserInfo">
+      <wsdl:input message="tns:ReturnUserInfoSoapIn" />
+      <wsdl:output message="tns:ReturnUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUserInfoByUserID">
+      <wsdl:input message="tns:ReturnUserInfoByUserIDSoapIn" />
+      <wsdl:output message="tns:ReturnUserInfoByUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminGroupEmailByReportID">
+      <wsdl:input message="tns:GetAdminGroupEmailByReportIDSoapIn" />
+      <wsdl:output message="tns:GetAdminGroupEmailByReportIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminDeptDetailsByReportID">
+      <wsdl:input message="tns:GetAdminDeptDetailsByReportIDSoapIn" />
+      <wsdl:output message="tns:GetAdminDeptDetailsByReportIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsCROMTOMSoap" type="tns:wsCROMTOMSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadDocument">
+      <soap:operation soapAction="CROMTOMService/UploadDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFile">
+      <soap:operation soapAction="CROMTOMService/SaveFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDocument">
+      <soap:operation soapAction="CROMTOMService/SubmitDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdateProject">
+      <soap:operation soapAction="CROMTOMService/AddUpdateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSize">
+      <soap:operation soapAction="CROMTOMService/GetFileSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFileHash">
+      <soap:operation soapAction="CROMTOMService/CheckFileHash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="CROMTOMService/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateToken">
+      <soap:operation soapAction="CROMTOMService/AuthenticateToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUser">
+      <soap:operation soapAction="CROMTOMService/ReturnUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentStatus">
+      <soap:operation soapAction="CROMTOMService/DocumentStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatus_Repudiate">
+      <soap:operation soapAction="CROMTOMService/ChangeStatus_Repudiate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatus_Reject">
+      <soap:operation soapAction="CROMTOMService/ChangeStatus_Reject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatus_Expire">
+      <soap:operation soapAction="CROMTOMService/ChangeStatus_Expire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUserInfo">
+      <soap:operation soapAction="CROMTOMService/ReturnUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUserInfoByUserID">
+      <soap:operation soapAction="CROMTOMService/ReturnUserInfoByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminGroupEmailByReportID">
+      <soap:operation soapAction="CROMTOMService/GetAdminGroupEmailByReportID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminDeptDetailsByReportID">
+      <soap:operation soapAction="CROMTOMService/GetAdminDeptDetailsByReportID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsCROMTOMSoap12" type="tns:wsCROMTOMSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadDocument">
+      <soap12:operation soapAction="CROMTOMService/UploadDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFile">
+      <soap12:operation soapAction="CROMTOMService/SaveFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitDocument">
+      <soap12:operation soapAction="CROMTOMService/SubmitDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdateProject">
+      <soap12:operation soapAction="CROMTOMService/AddUpdateProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSize">
+      <soap12:operation soapAction="CROMTOMService/GetFileSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFileHash">
+      <soap12:operation soapAction="CROMTOMService/CheckFileHash" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="CROMTOMService/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateToken">
+      <soap12:operation soapAction="CROMTOMService/AuthenticateToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUser">
+      <soap12:operation soapAction="CROMTOMService/ReturnUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentStatus">
+      <soap12:operation soapAction="CROMTOMService/DocumentStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatus_Repudiate">
+      <soap12:operation soapAction="CROMTOMService/ChangeStatus_Repudiate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatus_Reject">
+      <soap12:operation soapAction="CROMTOMService/ChangeStatus_Reject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStatus_Expire">
+      <soap12:operation soapAction="CROMTOMService/ChangeStatus_Expire" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUserInfo">
+      <soap12:operation soapAction="CROMTOMService/ReturnUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUserInfoByUserID">
+      <soap12:operation soapAction="CROMTOMService/ReturnUserInfoByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminGroupEmailByReportID">
+      <soap12:operation soapAction="CROMTOMService/GetAdminGroupEmailByReportID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminDeptDetailsByReportID">
+      <soap12:operation soapAction="CROMTOMService/GetAdminDeptDetailsByReportID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsCROMTOM">
+    <wsdl:port name="wsCROMTOMSoap" binding="tns:wsCROMTOMSoap">
+      <soap:address location="https://DMZ/CROMTOMService/wsCROMTOM.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsCROMTOMSoap12" binding="tns:wsCROMTOMSoap12">
+      <soap12:address location="https://DMZ/CROMTOMService/wsCROMTOM.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

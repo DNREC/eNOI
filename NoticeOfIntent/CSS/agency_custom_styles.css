@@ -1,0 +1,335 @@
+/* ALL CUSTOM AGENCY STYLES ON THIS SHEET */
+[class*="col-"].gutter-5 {
+    padding-left:5px;padding-right:5px;
+
+}
+.row.gutter-5 {
+    margin-left:-5px;margin-right:-5px
+
+}
+
+[class*="col-"].nogutter {
+    padding-left:0px;padding-right:0px;
+
+}
+
+.input-xs {
+    height: 30px;
+    padding: 5px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+span.radio {
+    padding: 0px;
+    margin-top:0px;
+    min-height:20px;
+}
+
+span.radio > input[type="radio"] {
+    margin-right:5px;
+    /*margin-bottom:7px;*/
+    margin-left:0px;
+
+    /*margin: 7px -5px 7px 0px;*/
+}
+
+span.radio > label {
+    float: left;
+    margin-right: 5px;
+    padding-top:0px;
+    padding-right:5px;
+    padding-bottom:0px;
+    font-weight: bold;
+    /*padding: 0px 5px 0px 10px;*/
+}
+
+span.radio > span.aspNetDisabled > input[type="radio"] {
+    margin-right:5px;
+    /*margin-bottom:7px;*/
+    margin-left:0px;
+
+    /*margin: 7px -5px 7px 0px;*/
+}
+
+span.radio > span.aspNetDisabled > label {
+    float: left;
+    margin-right: 5px;
+    padding-top:0px;
+    padding-right:5px;
+    padding-bottom:0px;
+    font-weight: bold;
+    /*padding: 0px 5px 0px 10px;*/
+}
+
+
+span.checkbox {
+    padding: 0px;
+    margin-top:0px;
+}
+
+span.checkbox > input[type="checkbox"] {
+    margin-right:5px;
+    /*margin-bottom:7px;*/
+    margin-left:0px;
+
+    /*margin: 7px -5px 7px 0px;*/
+}
+
+span.checkbox > label {
+    float: left;
+    margin-right: 5px;
+    padding-top:0px;
+    padding-right:5px;
+    padding-bottom:0px;
+    font-weight: bold;
+    /*padding: 0px 5px 0px 10px;*/
+}
+
+.font-bold {
+    font-weight:bold;
+}
+
+
+.btn {
+   /*width:200px; */
+}
+
+/*.checkbox input[type=checkbox] {
+    margin-left:0px;
+}*/
+
+
+.countyselect {
+
+}
+
+.noexposurecheck {
+}
+
+.anntreatmentthreshold{
+
+}
+.terminationcheck{
+
+}
+
+.NOIReadonly {
+    pointer-events:none;
+}
+
+.alert-text {
+        /*color: #a94442;*/
+        color:darkred;
+        font-size:larger;
+    }
+.normal-text{
+    color:black;
+    font-size:14px;
+}
+
+.dummy{
+
+}
+
+.panel-heading > a {
+    color:black;
+    text-decoration:none;
+}
+
+
+table th
+{
+    background-color:#006DCC;
+    color:white;
+    vertical-align:top;
+}
+
+table th a{
+    color:white;
+}
+
+.insertfooter{
+    background-color:#FFD99C;
+}
+
+ .table-hover>tbody>tr.insertfooter:hover {
+    background-color:#FFD99C;
+}
+
+
+
+/* -- Bootstrap Additions - ASP.NET Disabled ----------------- */
+ 
+input[type="radio"].aspNetDisabled,
+input[type="checkbox"].aspNetDisabled,
+.radio-inline.aspNetDisabled,
+.checkbox-inline.aspNetDisabled,
+.radio.aspNetDisabled label,
+.checkbox.aspNetDisabled label
+{
+    cursor: not-allowed;
+}
+ 
+.btn.aspNetDisabled,
+a.aspNetDisabled,
+a.aspNetDisabled:hover,
+a.aspNetDisabled:focus,
+a.aspNetDisabled:active
+
+{
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+ 
+.btn-default.aspNetDisabled,
+.btn-default.aspNetDisabled:hover,
+.btn-default.aspNetDisabled:focus,
+.btn-default.aspNetDisabled:active,
+.btn-default.aspNetDisabled.active
+{
+    background-color: #fff;
+    border-color: #ccc;
+}
+ 
+.btn-primary.aspNetDisabled,
+.btn-primary.aspNetDisabled:hover,
+.btn-primary.aspNetDisabled:focus,
+.btn-primary.aspNetDisabled:active,
+.btn-primary.aspNetDisabled.active
+{
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+ 
+.btn-success.aspNetDisabled,
+.btn-success.aspNetDisabled:hover,
+.btn-success.aspNetDisabled:focus,
+.btn-success.aspNetDisabled:active,
+.btn-success.aspNetDisabled.active
+{
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+ 
+.btn-info.aspNetDisabled,
+.btn-info.aspNetDisabled:hover,
+.btn-info.aspNetDisabled:focus,
+.btn-info.aspNetDisabled:active,
+.btn-info.aspNetDisabled.active
+{
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+ 
+.btn-warning.aspNetDisabled,
+.btn-warning.aspNetDisabled:hover,
+.btn-warning.aspNetDisabled:focus,
+.btn-warning.aspNetDisabled:active,
+.btn-warning.aspNetDisabled.active
+{
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+ 
+.btn-danger.aspNetDisabled,
+.btn-danger.aspNetDisabled:hover,
+.btn-danger.aspNetDisabled:focus,
+.btn-danger.aspNetDisabled:active,
+.btn-danger.aspNetDisabled.active
+{
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+ 
+.dropdown-menu > .aspNetDisabled > a,
+.dropdown-menu > .aspNetDisabled > a:hover,
+.dropdown-menu > .aspNetDisabled > a:focus,
+.dropdown-menu > li > a.aspNetDisabled,
+.dropdown-menu > li > a.aspNetDisabled:hover,
+.dropdown-menu > li > a.aspNetDisabled:focus
+{
+    color: #777;
+}
+ 
+.dropdown-menu > .aspNetDisabled > a:hover,
+.dropdown-menu > .aspNetDisabled > a:focus,
+.dropdown-menu > li > a.aspNetDisabled:hover,
+.dropdown-menu > li > a.aspNetDisabled:focus
+{
+    text-decoration: none;
+    cursor: not-allowed;
+    background-color: transparent;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+#footer {
+    background-color: lightgray;
+}
+
+
+/*-----override the size of the map from the ESRI CSS*/
+
+#mainWindow{
+    height:100%;
+    width:100%;
+}
+
+
+.cursorpointer{
+    cursor:pointer;
+}
+
+/* ----- Validation and error messages class starts -----*/
+/*.validationsummary {
+	border: 1px solid #b08b34;
+	background: transparent url(Images/WarningHeader.gif) no-repeat 12px 30px;
+	padding: 0px 0px 13px 0px;
+	font-size:12px;
+	width:99%;
+}
+.validationheader {
+	left: 0px;
+	position: relative;
+	font-size: 11px;
+	background-color: #e5d9bd;
+	color: #56300a;
+	height: 14px;
+	font-weight: bold;
+	border-bottom: 1px solid #b08b34;
+	padding-top: 3px;
+}
+.validationsummary ul {
+	padding-top: 5px;
+	padding-left: 45px;
+	list-style:none;
+	font-size: 11px;
+	color:#982b12;
+	font-style:italic;
+}
+.validationsummary ul li {
+	padding: 2px 0px 0px 15px;
+	background-image:url(Images/Warning.gif);
+	background-position:0px 3px;
+	background-repeat:no-repeat;
+}*/
+/* -- --Validation and error messages class ends -- --*/
+
+
+ /* .panel-heading .accordion-toggle:after {*/
+    /* symbol for "opening" panels */
+    /*font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    /*content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    /*float: right;        /* adjust as needed */
+    /*color: grey;         /* adjust as needed */
+/*}
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+   /* content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+/*}*/

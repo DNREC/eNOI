@@ -1,0 +1,2186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SessionInitiate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message_version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionInitiateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionInitiateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionInitiateVer2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message_version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="basefee" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="convfee" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="flatfee" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="varfee" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalfee" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BilleeFName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BilleeLName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BilleeAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BilleeCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BilleeState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BilleeZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apprelateddata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionInitiateVer2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionInitiateVer2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionVerification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message_version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remittance_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="security_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BFName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BLName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionVerificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionVerificationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionVerificationVer2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message_version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remittance_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="security_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionVerificationVer2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionVerificationVer2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message_version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remittance_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="security_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transaction_event" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="transaction_detail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avs_response" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fail_code" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="payment_type" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="convenience_fee_amount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="total_amount" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionNotificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionNotificationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionNotificationVer2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message_version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remittance_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="security_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaction_status" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="avs_response" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fail_code" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="payment_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="card_type" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="convenience_fee_amount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="total_amount" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="BFName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BLName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BZip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SessionNotificationVer2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SessionNotificationVer2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptBillingAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="remittance_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BFName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BLName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AcceptBillingAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AcceptBillingAddressResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillingAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="remittance_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BFName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BLName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillingAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBillingAddressResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="BFName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BLName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillingDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="remittance_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BFName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BLName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBillingDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBillingDetailsResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="BFName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BLName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAmountPaidByOrderNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAmountPaidByOrderNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAmountPaidByOrderNumberResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionsByOrderNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ordernumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionsByOrderNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionsByOrderNumberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionsForDateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromdate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="todate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionsForDateRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionsForDateRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppRelatedData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="remittanceid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppRelatedDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppRelatedDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFailCodeDescByRemittanceID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="remittanceid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFailCodeDescByRemittanceIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFailCodeDescByRemittanceIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFailCodeByRemittanceID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="remittanceid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFailCodeByRemittanceIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFailCodeByRemittanceIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAmountPaidByRemittanceID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="remittanceid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAmountPaidByRemittanceIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAmountPaidByRemittanceIDResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAVSCodeDescByRemittanceID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="remittanceid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAVSCodeDescByRemittanceIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAVSCodeDescByRemittanceIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="remittance_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactiondate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentdesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardtype" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalamount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTransactionDetailsResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactiondate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentdesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardtype" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalamount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="application_phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AppID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddApplicationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Application_AddParamByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AppID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParamValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AppParamTypeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Application_AddParamByIDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Application_GetParamValueByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AppID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AppParamTypeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Application_GetParamValueByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Application_GetParamValueByIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Application_AddParamByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AppID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParamValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParamDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Application_AddParamByNameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Application_GetParamValueByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AppID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParamDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Application_GetParamValueByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Application_GetParamValueByNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Application_GetDescByFailCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FailCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Application_GetDescByFailCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Application_GetDescByFailCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Application_GetDescByAVSCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AVSCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Application_GetDescByAVSCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Application_GetDescByAVSCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="int" type="s:int" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="decimal" type="s:decimal" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SessionInitiateSoapIn">
+    <wsdl:part name="parameters" element="tns:SessionInitiate" />
+  </wsdl:message>
+  <wsdl:message name="SessionInitiateSoapOut">
+    <wsdl:part name="parameters" element="tns:SessionInitiateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SessionInitiateVer2SoapIn">
+    <wsdl:part name="parameters" element="tns:SessionInitiateVer2" />
+  </wsdl:message>
+  <wsdl:message name="SessionInitiateVer2SoapOut">
+    <wsdl:part name="parameters" element="tns:SessionInitiateVer2Response" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationSoapIn">
+    <wsdl:part name="parameters" element="tns:SessionVerification" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationSoapOut">
+    <wsdl:part name="parameters" element="tns:SessionVerificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationVer2SoapIn">
+    <wsdl:part name="parameters" element="tns:SessionVerificationVer2" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationVer2SoapOut">
+    <wsdl:part name="parameters" element="tns:SessionVerificationVer2Response" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:SessionNotification" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:SessionNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationVer2SoapIn">
+    <wsdl:part name="parameters" element="tns:SessionNotificationVer2" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationVer2SoapOut">
+    <wsdl:part name="parameters" element="tns:SessionNotificationVer2Response" />
+  </wsdl:message>
+  <wsdl:message name="AcceptBillingAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:AcceptBillingAddress" />
+  </wsdl:message>
+  <wsdl:message name="AcceptBillingAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:AcceptBillingAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBillingAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBillingAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBillingDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBillingDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByOrderNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAmountPaidByOrderNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByOrderNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAmountPaidByOrderNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsByOrderNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionsByOrderNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsByOrderNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionsByOrderNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsForDateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionsForDateRange" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsForDateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionsForDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppRelatedDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppRelatedData" />
+  </wsdl:message>
+  <wsdl:message name="GetAppRelatedDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppRelatedDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeDescByRemittanceIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFailCodeDescByRemittanceID" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeDescByRemittanceIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFailCodeDescByRemittanceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeByRemittanceIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFailCodeByRemittanceID" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeByRemittanceIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFailCodeByRemittanceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByRemittanceIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAmountPaidByRemittanceID" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByRemittanceIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAmountPaidByRemittanceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAVSCodeDescByRemittanceIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAVSCodeDescByRemittanceID" />
+  </wsdl:message>
+  <wsdl:message name="GetAVSCodeDescByRemittanceIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAVSCodeDescByRemittanceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:AddApplication" />
+  </wsdl:message>
+  <wsdl:message name="AddApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:AddApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Application_AddParamByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Application_AddParamByID" />
+  </wsdl:message>
+  <wsdl:message name="Application_AddParamByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Application_AddParamByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetParamValueByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Application_GetParamValueByID" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetParamValueByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Application_GetParamValueByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Application_AddParamByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:Application_AddParamByName" />
+  </wsdl:message>
+  <wsdl:message name="Application_AddParamByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:Application_AddParamByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetParamValueByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:Application_GetParamValueByName" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetParamValueByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:Application_GetParamValueByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByFailCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:Application_GetDescByFailCode" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByFailCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:Application_GetDescByFailCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByAVSCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:Application_GetDescByAVSCode" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByAVSCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:Application_GetDescByAVSCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SessionInitiateHttpGetIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="OrderNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionInitiateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionInitiateVer2HttpGetIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="OrderNumber" type="s:string" />
+    <wsdl:part name="basefee" type="s:string" />
+    <wsdl:part name="convfee" type="s:string" />
+    <wsdl:part name="flatfee" type="s:string" />
+    <wsdl:part name="varfee" type="s:string" />
+    <wsdl:part name="totalfee" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="BilleeFName" type="s:string" />
+    <wsdl:part name="BilleeLName" type="s:string" />
+    <wsdl:part name="BilleeAddress" type="s:string" />
+    <wsdl:part name="BilleeCity" type="s:string" />
+    <wsdl:part name="BilleeState" type="s:string" />
+    <wsdl:part name="BilleeZip" type="s:string" />
+    <wsdl:part name="apprelateddata" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionInitiateVer2HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationHttpGetIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="remittance_id" type="s:string" />
+    <wsdl:part name="security_id" type="s:string" />
+    <wsdl:part name="BFName" type="s:string" />
+    <wsdl:part name="BLName" type="s:string" />
+    <wsdl:part name="BAddress" type="s:string" />
+    <wsdl:part name="BCity" type="s:string" />
+    <wsdl:part name="BState" type="s:string" />
+    <wsdl:part name="BZip" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationVer2HttpGetIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="remittance_id" type="s:string" />
+    <wsdl:part name="security_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationVer2HttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationHttpGetIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="remittance_id" type="s:string" />
+    <wsdl:part name="security_id" type="s:string" />
+    <wsdl:part name="transaction_event" type="s:string" />
+    <wsdl:part name="transaction_status" type="s:string" />
+    <wsdl:part name="transaction_detail" type="s:string" />
+    <wsdl:part name="avs_response" type="s:string" />
+    <wsdl:part name="fail_code" type="s:string" />
+    <wsdl:part name="payment_type" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="convenience_fee_amount" type="s:string" />
+    <wsdl:part name="total_amount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationVer2HttpGetIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="remittance_id" type="s:string" />
+    <wsdl:part name="security_id" type="s:string" />
+    <wsdl:part name="transaction_status" type="s:string" />
+    <wsdl:part name="avs_response" type="s:string" />
+    <wsdl:part name="fail_code" type="s:string" />
+    <wsdl:part name="payment_type" type="s:string" />
+    <wsdl:part name="card_type" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="convenience_fee_amount" type="s:string" />
+    <wsdl:part name="total_amount" type="s:string" />
+    <wsdl:part name="BFName" type="s:string" />
+    <wsdl:part name="BLName" type="s:string" />
+    <wsdl:part name="BAddress" type="s:string" />
+    <wsdl:part name="BCity" type="s:string" />
+    <wsdl:part name="BState" type="s:string" />
+    <wsdl:part name="BZip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationVer2HttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AcceptBillingAddressHttpGetIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="remittance_id" type="s:string" />
+    <wsdl:part name="BFName" type="s:string" />
+    <wsdl:part name="BLName" type="s:string" />
+    <wsdl:part name="BAddress" type="s:string" />
+    <wsdl:part name="BCity" type="s:string" />
+    <wsdl:part name="BState" type="s:string" />
+    <wsdl:part name="BZip" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AcceptBillingAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByOrderNumberHttpGetIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="OrderNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByOrderNumberHttpGetOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsByOrderNumberHttpGetIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="ordernumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsByOrderNumberHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsForDateRangeHttpGetIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="fromdate" type="s:string" />
+    <wsdl:part name="todate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsForDateRangeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAppRelatedDataHttpGetIn">
+    <wsdl:part name="remittanceid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAppRelatedDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeDescByRemittanceIDHttpGetIn">
+    <wsdl:part name="remittanceid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeDescByRemittanceIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeByRemittanceIDHttpGetIn">
+    <wsdl:part name="remittanceid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeByRemittanceIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByRemittanceIDHttpGetIn">
+    <wsdl:part name="remittanceid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByRemittanceIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="GetAVSCodeDescByRemittanceIDHttpGetIn">
+    <wsdl:part name="remittanceid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAVSCodeDescByRemittanceIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddApplicationHttpGetIn">
+    <wsdl:part name="AppID" type="s:string" />
+    <wsdl:part name="AppName" type="s:string" />
+    <wsdl:part name="PaymentName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddApplicationHttpGetOut" />
+  <wsdl:message name="Application_AddParamByIDHttpGetIn">
+    <wsdl:part name="AppID" type="s:string" />
+    <wsdl:part name="ParamValue" type="s:string" />
+    <wsdl:part name="AppParamTypeID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_AddParamByIDHttpGetOut" />
+  <wsdl:message name="Application_GetParamValueByIDHttpGetIn">
+    <wsdl:part name="AppID" type="s:string" />
+    <wsdl:part name="AppParamTypeID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetParamValueByIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_AddParamByNameHttpGetIn">
+    <wsdl:part name="AppID" type="s:string" />
+    <wsdl:part name="ParamValue" type="s:string" />
+    <wsdl:part name="ParamDescription" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_AddParamByNameHttpGetOut" />
+  <wsdl:message name="Application_GetParamValueByNameHttpGetIn">
+    <wsdl:part name="AppID" type="s:string" />
+    <wsdl:part name="ParamDescription" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetParamValueByNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByFailCodeHttpGetIn">
+    <wsdl:part name="FailCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByFailCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByAVSCodeHttpGetIn">
+    <wsdl:part name="AVSCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByAVSCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionInitiateHttpPostIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="OrderNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionInitiateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionInitiateVer2HttpPostIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="OrderNumber" type="s:string" />
+    <wsdl:part name="basefee" type="s:string" />
+    <wsdl:part name="convfee" type="s:string" />
+    <wsdl:part name="flatfee" type="s:string" />
+    <wsdl:part name="varfee" type="s:string" />
+    <wsdl:part name="totalfee" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="BilleeFName" type="s:string" />
+    <wsdl:part name="BilleeLName" type="s:string" />
+    <wsdl:part name="BilleeAddress" type="s:string" />
+    <wsdl:part name="BilleeCity" type="s:string" />
+    <wsdl:part name="BilleeState" type="s:string" />
+    <wsdl:part name="BilleeZip" type="s:string" />
+    <wsdl:part name="apprelateddata" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionInitiateVer2HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationHttpPostIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="remittance_id" type="s:string" />
+    <wsdl:part name="security_id" type="s:string" />
+    <wsdl:part name="BFName" type="s:string" />
+    <wsdl:part name="BLName" type="s:string" />
+    <wsdl:part name="BAddress" type="s:string" />
+    <wsdl:part name="BCity" type="s:string" />
+    <wsdl:part name="BState" type="s:string" />
+    <wsdl:part name="BZip" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationVer2HttpPostIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="remittance_id" type="s:string" />
+    <wsdl:part name="security_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionVerificationVer2HttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationHttpPostIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="remittance_id" type="s:string" />
+    <wsdl:part name="security_id" type="s:string" />
+    <wsdl:part name="transaction_event" type="s:string" />
+    <wsdl:part name="transaction_status" type="s:string" />
+    <wsdl:part name="transaction_detail" type="s:string" />
+    <wsdl:part name="avs_response" type="s:string" />
+    <wsdl:part name="fail_code" type="s:string" />
+    <wsdl:part name="payment_type" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="convenience_fee_amount" type="s:string" />
+    <wsdl:part name="total_amount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationVer2HttpPostIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="message_version" type="s:string" />
+    <wsdl:part name="remittance_id" type="s:string" />
+    <wsdl:part name="security_id" type="s:string" />
+    <wsdl:part name="transaction_status" type="s:string" />
+    <wsdl:part name="avs_response" type="s:string" />
+    <wsdl:part name="fail_code" type="s:string" />
+    <wsdl:part name="payment_type" type="s:string" />
+    <wsdl:part name="card_type" type="s:string" />
+    <wsdl:part name="amount" type="s:string" />
+    <wsdl:part name="convenience_fee_amount" type="s:string" />
+    <wsdl:part name="total_amount" type="s:string" />
+    <wsdl:part name="BFName" type="s:string" />
+    <wsdl:part name="BLName" type="s:string" />
+    <wsdl:part name="BAddress" type="s:string" />
+    <wsdl:part name="BCity" type="s:string" />
+    <wsdl:part name="BState" type="s:string" />
+    <wsdl:part name="BZip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SessionNotificationVer2HttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AcceptBillingAddressHttpPostIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="remittance_id" type="s:string" />
+    <wsdl:part name="BFName" type="s:string" />
+    <wsdl:part name="BLName" type="s:string" />
+    <wsdl:part name="BAddress" type="s:string" />
+    <wsdl:part name="BCity" type="s:string" />
+    <wsdl:part name="BState" type="s:string" />
+    <wsdl:part name="BZip" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AcceptBillingAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByOrderNumberHttpPostIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="OrderNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByOrderNumberHttpPostOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsByOrderNumberHttpPostIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="ordernumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsByOrderNumberHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsForDateRangeHttpPostIn">
+    <wsdl:part name="application_id" type="s:string" />
+    <wsdl:part name="fromdate" type="s:string" />
+    <wsdl:part name="todate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsForDateRangeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAppRelatedDataHttpPostIn">
+    <wsdl:part name="remittanceid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAppRelatedDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeDescByRemittanceIDHttpPostIn">
+    <wsdl:part name="remittanceid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeDescByRemittanceIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeByRemittanceIDHttpPostIn">
+    <wsdl:part name="remittanceid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFailCodeByRemittanceIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByRemittanceIDHttpPostIn">
+    <wsdl:part name="remittanceid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAmountPaidByRemittanceIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="GetAVSCodeDescByRemittanceIDHttpPostIn">
+    <wsdl:part name="remittanceid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAVSCodeDescByRemittanceIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddApplicationHttpPostIn">
+    <wsdl:part name="AppID" type="s:string" />
+    <wsdl:part name="AppName" type="s:string" />
+    <wsdl:part name="PaymentName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddApplicationHttpPostOut" />
+  <wsdl:message name="Application_AddParamByIDHttpPostIn">
+    <wsdl:part name="AppID" type="s:string" />
+    <wsdl:part name="ParamValue" type="s:string" />
+    <wsdl:part name="AppParamTypeID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_AddParamByIDHttpPostOut" />
+  <wsdl:message name="Application_GetParamValueByIDHttpPostIn">
+    <wsdl:part name="AppID" type="s:string" />
+    <wsdl:part name="AppParamTypeID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetParamValueByIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_AddParamByNameHttpPostIn">
+    <wsdl:part name="AppID" type="s:string" />
+    <wsdl:part name="ParamValue" type="s:string" />
+    <wsdl:part name="ParamDescription" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_AddParamByNameHttpPostOut" />
+  <wsdl:message name="Application_GetParamValueByNameHttpPostIn">
+    <wsdl:part name="AppID" type="s:string" />
+    <wsdl:part name="ParamDescription" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetParamValueByNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByFailCodeHttpPostIn">
+    <wsdl:part name="FailCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByFailCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByAVSCodeHttpPostIn">
+    <wsdl:part name="AVSCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Application_GetDescByAVSCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="OnlinePayServiceSoap">
+    <wsdl:operation name="SessionInitiate">
+      <wsdl:input message="tns:SessionInitiateSoapIn" />
+      <wsdl:output message="tns:SessionInitiateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionInitiateVer2">
+      <wsdl:input message="tns:SessionInitiateVer2SoapIn" />
+      <wsdl:output message="tns:SessionInitiateVer2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerification">
+      <wsdl:input message="tns:SessionVerificationSoapIn" />
+      <wsdl:output message="tns:SessionVerificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerificationVer2">
+      <wsdl:input message="tns:SessionVerificationVer2SoapIn" />
+      <wsdl:output message="tns:SessionVerificationVer2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotification">
+      <wsdl:input message="tns:SessionNotificationSoapIn" />
+      <wsdl:output message="tns:SessionNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotificationVer2">
+      <wsdl:input message="tns:SessionNotificationVer2SoapIn" />
+      <wsdl:output message="tns:SessionNotificationVer2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptBillingAddress">
+      <wsdl:input message="tns:AcceptBillingAddressSoapIn" />
+      <wsdl:output message="tns:AcceptBillingAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingAddress">
+      <wsdl:input message="tns:GetBillingAddressSoapIn" />
+      <wsdl:output message="tns:GetBillingAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingDetails">
+      <wsdl:input message="tns:GetBillingDetailsSoapIn" />
+      <wsdl:output message="tns:GetBillingDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByOrderNumber">
+      <wsdl:input message="tns:GetAmountPaidByOrderNumberSoapIn" />
+      <wsdl:output message="tns:GetAmountPaidByOrderNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsByOrderNumber">
+      <wsdl:input message="tns:GetTransactionsByOrderNumberSoapIn" />
+      <wsdl:output message="tns:GetTransactionsByOrderNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsForDateRange">
+      <wsdl:input message="tns:GetTransactionsForDateRangeSoapIn" />
+      <wsdl:output message="tns:GetTransactionsForDateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppRelatedData">
+      <wsdl:input message="tns:GetAppRelatedDataSoapIn" />
+      <wsdl:output message="tns:GetAppRelatedDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeDescByRemittanceID">
+      <wsdl:input message="tns:GetFailCodeDescByRemittanceIDSoapIn" />
+      <wsdl:output message="tns:GetFailCodeDescByRemittanceIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeByRemittanceID">
+      <wsdl:input message="tns:GetFailCodeByRemittanceIDSoapIn" />
+      <wsdl:output message="tns:GetFailCodeByRemittanceIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByRemittanceID">
+      <wsdl:input message="tns:GetAmountPaidByRemittanceIDSoapIn" />
+      <wsdl:output message="tns:GetAmountPaidByRemittanceIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAVSCodeDescByRemittanceID">
+      <wsdl:input message="tns:GetAVSCodeDescByRemittanceIDSoapIn" />
+      <wsdl:output message="tns:GetAVSCodeDescByRemittanceIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <wsdl:input message="tns:GetTransactionDetailsSoapIn" />
+      <wsdl:output message="tns:GetTransactionDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <wsdl:input message="tns:AddApplicationSoapIn" />
+      <wsdl:output message="tns:AddApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByID">
+      <wsdl:input message="tns:Application_AddParamByIDSoapIn" />
+      <wsdl:output message="tns:Application_AddParamByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByID">
+      <wsdl:input message="tns:Application_GetParamValueByIDSoapIn" />
+      <wsdl:output message="tns:Application_GetParamValueByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByName">
+      <wsdl:input message="tns:Application_AddParamByNameSoapIn" />
+      <wsdl:output message="tns:Application_AddParamByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByName">
+      <wsdl:input message="tns:Application_GetParamValueByNameSoapIn" />
+      <wsdl:output message="tns:Application_GetParamValueByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByFailCode">
+      <wsdl:input message="tns:Application_GetDescByFailCodeSoapIn" />
+      <wsdl:output message="tns:Application_GetDescByFailCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByAVSCode">
+      <wsdl:input message="tns:Application_GetDescByAVSCodeSoapIn" />
+      <wsdl:output message="tns:Application_GetDescByAVSCodeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OnlinePayServiceHttpGet">
+    <wsdl:operation name="SessionInitiate">
+      <wsdl:input message="tns:SessionInitiateHttpGetIn" />
+      <wsdl:output message="tns:SessionInitiateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionInitiateVer2">
+      <wsdl:input message="tns:SessionInitiateVer2HttpGetIn" />
+      <wsdl:output message="tns:SessionInitiateVer2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerification">
+      <wsdl:input message="tns:SessionVerificationHttpGetIn" />
+      <wsdl:output message="tns:SessionVerificationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerificationVer2">
+      <wsdl:input message="tns:SessionVerificationVer2HttpGetIn" />
+      <wsdl:output message="tns:SessionVerificationVer2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotification">
+      <wsdl:input message="tns:SessionNotificationHttpGetIn" />
+      <wsdl:output message="tns:SessionNotificationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotificationVer2">
+      <wsdl:input message="tns:SessionNotificationVer2HttpGetIn" />
+      <wsdl:output message="tns:SessionNotificationVer2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptBillingAddress">
+      <wsdl:input message="tns:AcceptBillingAddressHttpGetIn" />
+      <wsdl:output message="tns:AcceptBillingAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByOrderNumber">
+      <wsdl:input message="tns:GetAmountPaidByOrderNumberHttpGetIn" />
+      <wsdl:output message="tns:GetAmountPaidByOrderNumberHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsByOrderNumber">
+      <wsdl:input message="tns:GetTransactionsByOrderNumberHttpGetIn" />
+      <wsdl:output message="tns:GetTransactionsByOrderNumberHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsForDateRange">
+      <wsdl:input message="tns:GetTransactionsForDateRangeHttpGetIn" />
+      <wsdl:output message="tns:GetTransactionsForDateRangeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppRelatedData">
+      <wsdl:input message="tns:GetAppRelatedDataHttpGetIn" />
+      <wsdl:output message="tns:GetAppRelatedDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeDescByRemittanceID">
+      <wsdl:input message="tns:GetFailCodeDescByRemittanceIDHttpGetIn" />
+      <wsdl:output message="tns:GetFailCodeDescByRemittanceIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeByRemittanceID">
+      <wsdl:input message="tns:GetFailCodeByRemittanceIDHttpGetIn" />
+      <wsdl:output message="tns:GetFailCodeByRemittanceIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByRemittanceID">
+      <wsdl:input message="tns:GetAmountPaidByRemittanceIDHttpGetIn" />
+      <wsdl:output message="tns:GetAmountPaidByRemittanceIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAVSCodeDescByRemittanceID">
+      <wsdl:input message="tns:GetAVSCodeDescByRemittanceIDHttpGetIn" />
+      <wsdl:output message="tns:GetAVSCodeDescByRemittanceIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <wsdl:input message="tns:AddApplicationHttpGetIn" />
+      <wsdl:output message="tns:AddApplicationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByID">
+      <wsdl:input message="tns:Application_AddParamByIDHttpGetIn" />
+      <wsdl:output message="tns:Application_AddParamByIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByID">
+      <wsdl:input message="tns:Application_GetParamValueByIDHttpGetIn" />
+      <wsdl:output message="tns:Application_GetParamValueByIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByName">
+      <wsdl:input message="tns:Application_AddParamByNameHttpGetIn" />
+      <wsdl:output message="tns:Application_AddParamByNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByName">
+      <wsdl:input message="tns:Application_GetParamValueByNameHttpGetIn" />
+      <wsdl:output message="tns:Application_GetParamValueByNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByFailCode">
+      <wsdl:input message="tns:Application_GetDescByFailCodeHttpGetIn" />
+      <wsdl:output message="tns:Application_GetDescByFailCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByAVSCode">
+      <wsdl:input message="tns:Application_GetDescByAVSCodeHttpGetIn" />
+      <wsdl:output message="tns:Application_GetDescByAVSCodeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OnlinePayServiceHttpPost">
+    <wsdl:operation name="SessionInitiate">
+      <wsdl:input message="tns:SessionInitiateHttpPostIn" />
+      <wsdl:output message="tns:SessionInitiateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionInitiateVer2">
+      <wsdl:input message="tns:SessionInitiateVer2HttpPostIn" />
+      <wsdl:output message="tns:SessionInitiateVer2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerification">
+      <wsdl:input message="tns:SessionVerificationHttpPostIn" />
+      <wsdl:output message="tns:SessionVerificationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerificationVer2">
+      <wsdl:input message="tns:SessionVerificationVer2HttpPostIn" />
+      <wsdl:output message="tns:SessionVerificationVer2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotification">
+      <wsdl:input message="tns:SessionNotificationHttpPostIn" />
+      <wsdl:output message="tns:SessionNotificationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotificationVer2">
+      <wsdl:input message="tns:SessionNotificationVer2HttpPostIn" />
+      <wsdl:output message="tns:SessionNotificationVer2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AcceptBillingAddress">
+      <wsdl:input message="tns:AcceptBillingAddressHttpPostIn" />
+      <wsdl:output message="tns:AcceptBillingAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByOrderNumber">
+      <wsdl:input message="tns:GetAmountPaidByOrderNumberHttpPostIn" />
+      <wsdl:output message="tns:GetAmountPaidByOrderNumberHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsByOrderNumber">
+      <wsdl:input message="tns:GetTransactionsByOrderNumberHttpPostIn" />
+      <wsdl:output message="tns:GetTransactionsByOrderNumberHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsForDateRange">
+      <wsdl:input message="tns:GetTransactionsForDateRangeHttpPostIn" />
+      <wsdl:output message="tns:GetTransactionsForDateRangeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppRelatedData">
+      <wsdl:input message="tns:GetAppRelatedDataHttpPostIn" />
+      <wsdl:output message="tns:GetAppRelatedDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeDescByRemittanceID">
+      <wsdl:input message="tns:GetFailCodeDescByRemittanceIDHttpPostIn" />
+      <wsdl:output message="tns:GetFailCodeDescByRemittanceIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeByRemittanceID">
+      <wsdl:input message="tns:GetFailCodeByRemittanceIDHttpPostIn" />
+      <wsdl:output message="tns:GetFailCodeByRemittanceIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByRemittanceID">
+      <wsdl:input message="tns:GetAmountPaidByRemittanceIDHttpPostIn" />
+      <wsdl:output message="tns:GetAmountPaidByRemittanceIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAVSCodeDescByRemittanceID">
+      <wsdl:input message="tns:GetAVSCodeDescByRemittanceIDHttpPostIn" />
+      <wsdl:output message="tns:GetAVSCodeDescByRemittanceIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <wsdl:input message="tns:AddApplicationHttpPostIn" />
+      <wsdl:output message="tns:AddApplicationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByID">
+      <wsdl:input message="tns:Application_AddParamByIDHttpPostIn" />
+      <wsdl:output message="tns:Application_AddParamByIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByID">
+      <wsdl:input message="tns:Application_GetParamValueByIDHttpPostIn" />
+      <wsdl:output message="tns:Application_GetParamValueByIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByName">
+      <wsdl:input message="tns:Application_AddParamByNameHttpPostIn" />
+      <wsdl:output message="tns:Application_AddParamByNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByName">
+      <wsdl:input message="tns:Application_GetParamValueByNameHttpPostIn" />
+      <wsdl:output message="tns:Application_GetParamValueByNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByFailCode">
+      <wsdl:input message="tns:Application_GetDescByFailCodeHttpPostIn" />
+      <wsdl:output message="tns:Application_GetDescByFailCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByAVSCode">
+      <wsdl:input message="tns:Application_GetDescByAVSCodeHttpPostIn" />
+      <wsdl:output message="tns:Application_GetDescByAVSCodeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OnlinePayServiceSoap" type="tns:OnlinePayServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SessionInitiate">
+      <soap:operation soapAction="http://tempuri.org/SessionInitiate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionInitiateVer2">
+      <soap:operation soapAction="http://tempuri.org/SessionInitiateVer2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerification">
+      <soap:operation soapAction="http://tempuri.org/SessionVerification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerificationVer2">
+      <soap:operation soapAction="http://tempuri.org/SessionVerificationVer2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotification">
+      <soap:operation soapAction="http://tempuri.org/SessionNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotificationVer2">
+      <soap:operation soapAction="http://tempuri.org/SessionNotificationVer2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptBillingAddress">
+      <soap:operation soapAction="http://tempuri.org/AcceptBillingAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingAddress">
+      <soap:operation soapAction="http://tempuri.org/GetBillingAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingDetails">
+      <soap:operation soapAction="http://tempuri.org/GetBillingDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByOrderNumber">
+      <soap:operation soapAction="http://tempuri.org/GetAmountPaidByOrderNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsByOrderNumber">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionsByOrderNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsForDateRange">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionsForDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppRelatedData">
+      <soap:operation soapAction="http://tempuri.org/GetAppRelatedData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeDescByRemittanceID">
+      <soap:operation soapAction="http://tempuri.org/GetFailCodeDescByRemittanceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeByRemittanceID">
+      <soap:operation soapAction="http://tempuri.org/GetFailCodeByRemittanceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByRemittanceID">
+      <soap:operation soapAction="http://tempuri.org/GetAmountPaidByRemittanceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAVSCodeDescByRemittanceID">
+      <soap:operation soapAction="http://tempuri.org/GetAVSCodeDescByRemittanceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <soap:operation soapAction="http://tempuri.org/AddApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByID">
+      <soap:operation soapAction="http://tempuri.org/Application_AddParamByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByID">
+      <soap:operation soapAction="http://tempuri.org/Application_GetParamValueByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByName">
+      <soap:operation soapAction="http://tempuri.org/Application_AddParamByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByName">
+      <soap:operation soapAction="http://tempuri.org/Application_GetParamValueByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByFailCode">
+      <soap:operation soapAction="http://tempuri.org/Application_GetDescByFailCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByAVSCode">
+      <soap:operation soapAction="http://tempuri.org/Application_GetDescByAVSCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OnlinePayServiceSoap12" type="tns:OnlinePayServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SessionInitiate">
+      <soap12:operation soapAction="http://tempuri.org/SessionInitiate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionInitiateVer2">
+      <soap12:operation soapAction="http://tempuri.org/SessionInitiateVer2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerification">
+      <soap12:operation soapAction="http://tempuri.org/SessionVerification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerificationVer2">
+      <soap12:operation soapAction="http://tempuri.org/SessionVerificationVer2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotification">
+      <soap12:operation soapAction="http://tempuri.org/SessionNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotificationVer2">
+      <soap12:operation soapAction="http://tempuri.org/SessionNotificationVer2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptBillingAddress">
+      <soap12:operation soapAction="http://tempuri.org/AcceptBillingAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingAddress">
+      <soap12:operation soapAction="http://tempuri.org/GetBillingAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetBillingDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByOrderNumber">
+      <soap12:operation soapAction="http://tempuri.org/GetAmountPaidByOrderNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsByOrderNumber">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionsByOrderNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsForDateRange">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionsForDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppRelatedData">
+      <soap12:operation soapAction="http://tempuri.org/GetAppRelatedData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeDescByRemittanceID">
+      <soap12:operation soapAction="http://tempuri.org/GetFailCodeDescByRemittanceID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeByRemittanceID">
+      <soap12:operation soapAction="http://tempuri.org/GetFailCodeByRemittanceID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByRemittanceID">
+      <soap12:operation soapAction="http://tempuri.org/GetAmountPaidByRemittanceID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAVSCodeDescByRemittanceID">
+      <soap12:operation soapAction="http://tempuri.org/GetAVSCodeDescByRemittanceID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <soap12:operation soapAction="http://tempuri.org/AddApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByID">
+      <soap12:operation soapAction="http://tempuri.org/Application_AddParamByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByID">
+      <soap12:operation soapAction="http://tempuri.org/Application_GetParamValueByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByName">
+      <soap12:operation soapAction="http://tempuri.org/Application_AddParamByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByName">
+      <soap12:operation soapAction="http://tempuri.org/Application_GetParamValueByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByFailCode">
+      <soap12:operation soapAction="http://tempuri.org/Application_GetDescByFailCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByAVSCode">
+      <soap12:operation soapAction="http://tempuri.org/Application_GetDescByAVSCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OnlinePayServiceHttpGet" type="tns:OnlinePayServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SessionInitiate">
+      <http:operation location="/SessionInitiate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionInitiateVer2">
+      <http:operation location="/SessionInitiateVer2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerification">
+      <http:operation location="/SessionVerification" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerificationVer2">
+      <http:operation location="/SessionVerificationVer2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotification">
+      <http:operation location="/SessionNotification" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotificationVer2">
+      <http:operation location="/SessionNotificationVer2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptBillingAddress">
+      <http:operation location="/AcceptBillingAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByOrderNumber">
+      <http:operation location="/GetAmountPaidByOrderNumber" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsByOrderNumber">
+      <http:operation location="/GetTransactionsByOrderNumber" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsForDateRange">
+      <http:operation location="/GetTransactionsForDateRange" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppRelatedData">
+      <http:operation location="/GetAppRelatedData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeDescByRemittanceID">
+      <http:operation location="/GetFailCodeDescByRemittanceID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeByRemittanceID">
+      <http:operation location="/GetFailCodeByRemittanceID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByRemittanceID">
+      <http:operation location="/GetAmountPaidByRemittanceID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAVSCodeDescByRemittanceID">
+      <http:operation location="/GetAVSCodeDescByRemittanceID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <http:operation location="/AddApplication" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByID">
+      <http:operation location="/Application_AddParamByID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByID">
+      <http:operation location="/Application_GetParamValueByID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByName">
+      <http:operation location="/Application_AddParamByName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByName">
+      <http:operation location="/Application_GetParamValueByName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByFailCode">
+      <http:operation location="/Application_GetDescByFailCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByAVSCode">
+      <http:operation location="/Application_GetDescByAVSCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OnlinePayServiceHttpPost" type="tns:OnlinePayServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SessionInitiate">
+      <http:operation location="/SessionInitiate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionInitiateVer2">
+      <http:operation location="/SessionInitiateVer2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerification">
+      <http:operation location="/SessionVerification" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionVerificationVer2">
+      <http:operation location="/SessionVerificationVer2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotification">
+      <http:operation location="/SessionNotification" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SessionNotificationVer2">
+      <http:operation location="/SessionNotificationVer2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcceptBillingAddress">
+      <http:operation location="/AcceptBillingAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByOrderNumber">
+      <http:operation location="/GetAmountPaidByOrderNumber" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsByOrderNumber">
+      <http:operation location="/GetTransactionsByOrderNumber" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionsForDateRange">
+      <http:operation location="/GetTransactionsForDateRange" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppRelatedData">
+      <http:operation location="/GetAppRelatedData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeDescByRemittanceID">
+      <http:operation location="/GetFailCodeDescByRemittanceID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailCodeByRemittanceID">
+      <http:operation location="/GetFailCodeByRemittanceID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmountPaidByRemittanceID">
+      <http:operation location="/GetAmountPaidByRemittanceID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAVSCodeDescByRemittanceID">
+      <http:operation location="/GetAVSCodeDescByRemittanceID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <http:operation location="/AddApplication" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByID">
+      <http:operation location="/Application_AddParamByID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByID">
+      <http:operation location="/Application_GetParamValueByID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_AddParamByName">
+      <http:operation location="/Application_AddParamByName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetParamValueByName">
+      <http:operation location="/Application_GetParamValueByName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByFailCode">
+      <http:operation location="/Application_GetDescByFailCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Application_GetDescByAVSCode">
+      <http:operation location="/Application_GetDescByAVSCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OnlinePayService">
+    <wsdl:port name="OnlinePayServiceSoap" binding="tns:OnlinePayServiceSoap">
+      <soap:address location="https://DMZ/onlinepay/onlinepay.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OnlinePayServiceSoap12" binding="tns:OnlinePayServiceSoap12">
+      <soap12:address location="https://DMZ/onlinepay/onlinepay.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OnlinePayServiceHttpGet" binding="tns:OnlinePayServiceHttpGet">
+      <http:address location="https://DMZ/onlinepay/onlinepay.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OnlinePayServiceHttpPost" binding="tns:OnlinePayServiceHttpPost">
+      <http:address location="https://DMZ/onlinepay/onlinepay.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

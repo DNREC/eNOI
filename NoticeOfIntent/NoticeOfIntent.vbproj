@@ -1,0 +1,982 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{37D31B60-193A-4F27-98BC-A8B94DF4A3E7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NoticeOfIntent</RootNamespace>
+    <AssemblyName>NoticeOfIntent</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>NoticeOfIntent.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>NoticeOfIntent.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Web.Routing" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\CoPermitteNOI.aspx" />
+    <Content Include="Admin\GeneralNOI.aspx" />
+    <Content Include="Admin\ManageCoupons.aspx" />
+    <Content Include="Admin\ManageProjects.aspx" />
+    <Content Include="Admin\SendDataToEPA.aspx" />
+    <Content Include="CLF\css\bootstrap.min.css" />
+    <Content Include="CLF\css\eme.css" />
+    <Content Include="CLF\css\fdatepicker.min.css" />
+    <Content Include="CLF\css\funnelback.autocompletion-2.6.0.css" />
+    <Content Include="CLF\css\funnelback.css" />
+    <Content Include="CLF\css\gic-category-subscription.css" />
+    <Content Include="CLF\css\jquery-ui.min.css" />
+    <Content Include="CLF\css\jquery.autocomplete.css" />
+    <Content Include="CLF\css\jquery.ui.css" />
+    <Content Include="CLF\css\leaflet.css" />
+    <Content Include="CLF\css\ReadSpeaker.Styles-Button.css" />
+    <Content Include="CLF\css\select2.min.css" />
+    <Content Include="CLF\css\style.css" />
+    <Content Include="CLF\css\style.min.css" />
+    <Content Include="CLF\css\theme.min.css" />
+    <Content Include="CLF\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="CLF\img\android-icon-192x192.png" />
+    <Content Include="CLF\img\apple-icon-114x114.png" />
+    <Content Include="CLF\img\apple-icon-120x120.png" />
+    <Content Include="CLF\img\apple-icon-144x144.png" />
+    <Content Include="CLF\img\apple-icon-152x152.png" />
+    <Content Include="CLF\img\apple-icon-180x180.png" />
+    <Content Include="CLF\img\apple-icon-57x57.png" />
+    <Content Include="CLF\img\apple-icon-60x60.png" />
+    <Content Include="CLF\img\apple-icon-72x72.png" />
+    <Content Include="CLF\img\apple-icon-76x76.png" />
+    <Content Include="CLF\img\delaware_global_d%402x.png" />
+    <Content Include="CLF\img\delaware_global_d_blue%402x.png" />
+    <Content Include="CLF\img\delaware_global_text%402x.png" />
+    <Content Include="CLF\img\delaware_global_text_blue%402x.png" />
+    <Content Include="CLF\img\dnrec-logo.png" />
+    <Content Include="CLF\img\dnrec-midpage-logo.png" />
+    <Content Include="CLF\img\favicon-16x16.png" />
+    <Content Include="CLF\img\favicon-32x32.png" />
+    <Content Include="CLF\img\favicon-96x96.png" />
+    <Content Include="CLF\img\gic_portal_footer_logo%402x.png" />
+    <Content Include="CLF\img\portal_footer_seal.png" />
+    <Content Include="CLF\js\agency.js" />
+    <Content Include="CLF\js\all.js" />
+    <Content Include="CLF\js\axios.js" />
+    <Content Include="CLF\js\bootstrap.min.js" />
+    <Content Include="CLF\js\browser.min.js" />
+    <Content Include="CLF\js\button.min.js" />
+    <Content Include="CLF\js\core.min.js" />
+    <Content Include="CLF\js\dialog.min.js" />
+    <Content Include="CLF\js\draggable.min.js" />
+    <Content Include="CLF\js\eme.js" />
+    <Content Include="CLF\js\fdatepicker.min.js" />
+    <Content Include="CLF\js\funnelback.autocompletion-2.6.0.js" />
+    <Content Include="CLF\js\funnelbackConfig.js" />
+    <Content Include="CLF\js\handlebars-4.0.5.min.js" />
+    <Content Include="CLF\js\jquery-migrate.min.js" />
+    <Content Include="CLF\js\jquery.js" />
+    <Content Include="CLF\js\moment.min.js" />
+    <Content Include="CLF\js\mouse.min.js" />
+    <Content Include="CLF\js\position.min.js" />
+    <Content Include="CLF\js\react-dom.min.js" />
+    <Content Include="CLF\js\react.min.js" />
+    <Content Include="CLF\js\resizable.min.js" />
+    <Content Include="CLF\js\scripts.js" />
+    <Content Include="CLF\js\select2.min.js" />
+    <Content Include="CLF\js\settings.js" />
+    <Content Include="CLF\js\typeahead.bundle-0.11.1.min.js" />
+    <Content Include="CLF\js\v4-shims.js" />
+    <Content Include="CLF\js\webReader.js" />
+    <Content Include="CLF\js\widget.min.js" />
+    <Content Include="CLF\js\wp-embed.min.js" />
+    <Content Include="CLF\js\wp-polyfill-fetch.min.js" />
+    <Content Include="CLF\js\wp-polyfill.min.js" />
+    <Content Include="Content\images\Edit.png" />
+    <Content Include="Content\images\Cancel.png" />
+    <Content Include="Content\images\Save.png" />
+    <Content Include="Content\images\vectordnreclogo.jpg" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="CSS\agency_custom_styles.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Error\ErrorPage.aspx" />
+    <Content Include="Forms\NOIDocs.aspx" />
+    <Content Include="Forms\OpenFile.aspx" />
+    <Content Include="Forms\PreviewSubmission.aspx" />
+    <Content Include="Forms\SessionFailure.aspx" />
+    <Content Include="Forms\SessionInitiate.aspx" />
+    <Content Include="Forms\SessionNotification.aspx" />
+    <Content Include="Forms\SessionSuccessfull.aspx" />
+    <Content Include="Forms\SessionVerification.aspx" />
+    <Content Include="Forms\SubmissionDetails.aspx" />
+    <Content Include="Admin\Submissions.aspx" />
+    <Content Include="Content\images\Delete.png" />
+    <Content Include="Error\UserAuthenticationFailed.aspx" />
+    <Content Include="Forms\CoPermitteApplication.aspx" />
+    <Content Include="Forms\DisplayProjects.aspx" />
+    <Content Include="Forms\Main.aspx" />
+    <Content Include="Forms\NOIAgreement.aspx" />
+    <Content Include="Forms\NOIApplication.aspx" />
+    <Content Include="Forms\NOTCoPermittee.aspx" />
+    <Content Include="Forms\NOTGeneralPermit.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="MapJS\initmap4.js" />
+    <Content Include="MapJS\initmapoutfall.js" />
+    <Content Include="packages.config" />
+    <Content Include="CLF\CLF.Master" />
+    <Content Include="CLFNested.master" />
+    <Content Include="GeneralNested.master" />
+    <Content Include="CLF\fonts\futura-t-medium.ttf" />
+    <Content Include="CLF\fonts\montserrat-black-webfont.woff" />
+    <Content Include="CLF\fonts\montserrat-black-webfont.woff2" />
+    <Content Include="CLF\fonts\montserrat-bold-webfont.woff" />
+    <Content Include="CLF\fonts\montserrat-bold-webfont.woff2" />
+    <Content Include="CLF\fonts\montserrat-hairline-webfont.woff" />
+    <Content Include="CLF\fonts\montserrat-light-webfont.woff" />
+    <Content Include="CLF\fonts\montserrat-light-webfont.woff2" />
+    <Content Include="CLF\fonts\montserrat-regular-webfont %281%29.woff2" />
+    <Content Include="CLF\fonts\montserrat-regular-webfont.woff" />
+    <Content Include="CLF\fonts\montserrat-regular-webfont.woff2" />
+    <Content Include="CLF\img\manifest.json" />
+    <Content Include="CLF\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="CLF\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="CLF\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="CLF\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="My Project\PublishProfiles\deploy2dev.pubxml" />
+    <None Include="My Project\PublishProfiles\deploy2ProdFTP.pubxml" />
+    <None Include="My Project\PublishProfiles\Deploy2Test.pubxml" />
+    <None Include="My Project\PublishProfiles\deployadmin2dev.pubxml" />
+    <None Include="My Project\PublishProfiles\DeployAdmin2ProdFTP.pubxml" />
+    <None Include="My Project\PublishProfiles\DeployAdmin2Test.pubxml" />
+    <None Include="My Project\PublishProfiles\NOIPublish.pubxml" />
+    <None Include="My Project\PublishProfiles\testadminfolder.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.mask.js" />
+    <Content Include="Scripts\jquery.mask.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UserControls\ucNameAddressInfo.ascx" />
+    <Content Include="UserControls\ucNameAddressInfoReadOnly.ascx" />
+    <Content Include="UserControls\ucTaxParcelAdd.ascx" />
+    <Content Include="UserControls\ucTaxParcelNewCastle.ascx" />
+    <Content Include="UserControls\ucTaxParcelKent.ascx" />
+    <Content Include="UserControls\ucTaxParcelSussex.ascx" />
+    <Content Include="Forms\ViewReport.ashx" />
+    <Content Include="UserGuide\eNOI_Guide_Construction.pptx" />
+    <Content Include="UserGuide\eNOI_Guide_Construction.pdf" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="UserGuide\eNOI_Guide_Pesticides.pdf" />
+    <None Include="Web References\OnlinePay\onlinepay.disco" />
+    <None Include="Web References\wsCROMTOM\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\OnlinePay\onlinepay.wsdl" />
+    <None Include="Web References\OnlinePay\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Web References\ReportServerDMZ\DocumentMapNode.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\ReportServerDMZ\ExecutionInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\ReportServerDMZ\ExecutionInfo2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\ReportServerDMZ\Extension.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\ReportServerDMZ\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <None Include="Web References\ReportServerDMZ\ReportExecution2005.wsdl" />
+    <Content Include="Web References\ReportServerDMZ\Warning.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\wsCROMTOM\wsCROMTOM.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\CoPermitteNOI.aspx.designer.vb">
+      <DependentUpon>CoPermitteNOI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CoPermitteNOI.aspx.vb">
+      <DependentUpon>CoPermitteNOI.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GeneralNOI.aspx.designer.vb">
+      <DependentUpon>GeneralNOI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GeneralNOI.aspx.vb">
+      <DependentUpon>GeneralNOI.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageCoupons.aspx.designer.vb">
+      <DependentUpon>ManageCoupons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageCoupons.aspx.vb">
+      <DependentUpon>ManageCoupons.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageProjects.aspx.designer.vb">
+      <DependentUpon>ManageProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageProjects.aspx.vb">
+      <DependentUpon>ManageProjects.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SendDataToEPA.aspx.designer.vb">
+      <DependentUpon>SendDataToEPA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SendDataToEPA.aspx.vb">
+      <DependentUpon>SendDataToEPA.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="BAL\APBAL.vb" />
+    <Compile Include="BAL\ICISExport.vb" />
+    <Compile Include="BAL\ISWBAL.vb" />
+    <Compile Include="BAL\MasterBasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BAL\MasterButtonClickEventArgs.vb" />
+    <Compile Include="BAL\NOIBAL.vb" />
+    <Compile Include="CLFNested.master.designer.vb">
+      <DependentUpon>CLFNested.master</DependentUpon>
+    </Compile>
+    <Compile Include="CLFNested.master.vb">
+      <DependentUpon>CLFNested.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DAL\APRepository.vb" />
+    <Compile Include="DAL\BaseContext.vb" />
+    <Compile Include="DAL\ISWDB.vb" />
+    <Compile Include="DAL\ISWRepository.vb" />
+    <Compile Include="DAL\Mappers\NOILocISWMapper.vb" />
+    <Compile Include="DAL\Mappers\NOILocMapper.vb" />
+    <Compile Include="DAL\Mappers\NOIProgramMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionAPMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionForAPMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionISWAPMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionISWMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionNAICSMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionNEMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionSICMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionSWConstructMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionSWMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionTaxParcelsMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionTypeMapper.vb" />
+    <Compile Include="DAL\NOIRepository.vb" />
+    <Compile Include="DAL\PesticidesDB.vb" />
+    <Compile Include="DAL\SWDB.vb" />
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EntityInternal\NOIAPAnnualThreshold.vb" />
+    <Compile Include="EntityInternal\NOIAPChemicals.vb" />
+    <Compile Include="EntityInternal\NOIOutfall.vb" />
+    <Compile Include="EntityInternal\NOIPersonOrg.vb" />
+    <Compile Include="EntityInternal\NOIPiNAICS.vb" />
+    <Compile Include="EntityInternal\NOIPiSIC.vb" />
+    <Compile Include="EntityInternal\NOIProjectInternal.vb" />
+    <Compile Include="EntityInternal\NOITaxParcel.vb" />
+    <Compile Include="EntityInternal\PermitStatus.vb" />
+    <Compile Include="EntityInternal\PermitStatusCodeLst.vb" />
+    <Compile Include="EntityInternal\SWConstruct.vb" />
+    <Compile Include="EntityInternal\SWConstructBMP.vb" />
+    <Compile Include="Entity\AppEntity\NOIOwner.vb" />
+    <Compile Include="Entity\AppEntity\NOIPublicView.vb" />
+    <Compile Include="Entity\AppEntity\NOIPublicViewForIS.vb" />
+    <Compile Include="Entity\AppEntity\ProjectOwnerView.vb" />
+    <Compile Include="Entity\MS4BMPCatagory.vb" />
+    <Compile Include="Entity\MS4MCMDetails.vb" />
+    <Compile Include="Entity\MS4MCMType.vb" />
+    <Compile Include="Entity\MS4Pollutants.vb" />
+    <Compile Include="Entity\MS4ReceivingWaters.vb" />
+    <Compile Include="Entity\MS4ResponsibleDept.vb" />
+    <Compile Include="Entity\MS4RWPollutants.vb" />
+    <Compile Include="Entity\MS4TargetedAudience.vb" />
+    <Compile Include="Entity\NOExposureCL.vb" />
+    <Compile Include="Entity\NOIEntityType.vb" />
+    <Compile Include="Entity\NOILoc.vb" />
+    <Compile Include="Entity\NOIPesticidePattern.vb" />
+    <Compile Include="Entity\NOIProgram.vb" />
+    <Compile Include="Entity\NOIProgSubmissionType.vb" />
+    <Compile Include="Entity\NOISubmissionAcceptedPDF.vb" />
+    <Compile Include="Entity\NOISubmissionAP.vb" />
+    <Compile Include="Entity\NOISubmissionAPChemicals.vb" />
+    <Compile Include="Entity\NOISubmissionDocFile.vb" />
+    <Compile Include="Entity\NOISubmissionDocs.vb" />
+    <Compile Include="Entity\NOISubmissionISWAP.vb" />
+    <Compile Include="Entity\NOISubmissionNAICS.vb" />
+    <Compile Include="Entity\NOISubmissionNE.vb" />
+    <Compile Include="Entity\NOISubmissionSIC.vb" />
+    <Compile Include="Entity\NOISubmissionSW.vb" />
+    <Compile Include="Entity\NOISubmissionSWBMP.vb" />
+    <Compile Include="Entity\NOISubmissionSWConstruct.vb" />
+    <Compile Include="Entity\NOISubmissionTaxParcels.vb" />
+    <Compile Include="Entity\NOISubmissionUnit.vb" />
+    <Compile Include="Entity\NOIWebPage.vb" />
+    <Compile Include="Entity\NOIWebPageCtrlTxt.vb" />
+    <Compile Include="Entity\SWBMPlst.vb" />
+    <Compile Include="Error\ErrorPage.aspx.designer.vb">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\ErrorPage.aspx.vb">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\NOIDocs.aspx.designer.vb">
+      <DependentUpon>NOIDocs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NOIDocs.aspx.vb">
+      <DependentUpon>NOIDocs.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\OpenFile.aspx.designer.vb">
+      <DependentUpon>OpenFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OpenFile.aspx.vb">
+      <DependentUpon>OpenFile.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PreviewSubmission.aspx.designer.vb">
+      <DependentUpon>PreviewSubmission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PreviewSubmission.aspx.vb">
+      <DependentUpon>PreviewSubmission.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\SessionFailure.aspx.designer.vb">
+      <DependentUpon>SessionFailure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SessionFailure.aspx.vb">
+      <DependentUpon>SessionFailure.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\SessionInitiate.aspx.designer.vb">
+      <DependentUpon>SessionInitiate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SessionInitiate.aspx.vb">
+      <DependentUpon>SessionInitiate.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\SessionNotification.aspx.designer.vb">
+      <DependentUpon>SessionNotification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SessionNotification.aspx.vb">
+      <DependentUpon>SessionNotification.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\SessionSuccessfull.aspx.designer.vb">
+      <DependentUpon>SessionSuccessfull.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SessionSuccessfull.aspx.vb">
+      <DependentUpon>SessionSuccessfull.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\SessionVerification.aspx.designer.vb">
+      <DependentUpon>SessionVerification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SessionVerification.aspx.vb">
+      <DependentUpon>SessionVerification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\SubmissionDetails.aspx.designer.vb">
+      <DependentUpon>SubmissionDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubmissionDetails.aspx.vb">
+      <DependentUpon>SubmissionDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Submissions.aspx.designer.vb">
+      <DependentUpon>Submissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Submissions.aspx.vb">
+      <DependentUpon>Submissions.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\WebApiConfig.vb" />
+    <Compile Include="BAL\AdminBAL.vb" />
+    <Compile Include="BAL\BasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\UserAuthenticationFailed.aspx.designer.vb">
+      <DependentUpon>UserAuthenticationFailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\UserAuthenticationFailed.aspx.vb">
+      <DependentUpon>UserAuthenticationFailed.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="GeneralNested.master.designer.vb">
+      <DependentUpon>GeneralNested.master</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralNested.master.vb">
+      <DependentUpon>GeneralNested.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.vb">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.vb">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Services\EISSQLController.vb" />
+    <Compile Include="Utility\CROMERREventArgs.vb" />
+    <Compile Include="Utility\CROMERRExchange.vb" />
+    <Compile Include="BAL\FormBasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BAL\NOILogin.vb" />
+    <Compile Include="BAL\SWBAL.vb" />
+    <Compile Include="CacheLayer\CacheLookupData.vb" />
+    <Compile Include="DAL\AdminRepository.vb" />
+    <Compile Include="DAL\EISSQLDB.vb" />
+    <Compile Include="Entity\AppEntity\LogInDetails.vb" />
+    <Compile Include="Entity\NOISubmissionTypelst.vb" />
+    <Compile Include="Entity\AppEntity\UserInfo.vb" />
+    <Compile Include="Entity\Zipcodes.vb" />
+    <Compile Include="Forms\DisplayProjects.aspx.designer.vb">
+      <DependentUpon>DisplayProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DisplayProjects.aspx.vb">
+      <DependentUpon>DisplayProjects.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\NOIAgreement.aspx.designer.vb">
+      <DependentUpon>NOIAgreement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NOIAgreement.aspx.vb">
+      <DependentUpon>NOIAgreement.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ZipcodesController.vb" />
+    <Compile Include="UserControls\ucNameAddressInfoReadOnly.ascx.designer.vb">
+      <DependentUpon>ucNameAddressInfoReadOnly.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucNameAddressInfoReadOnly.ascx.vb">
+      <DependentUpon>ucNameAddressInfoReadOnly.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utility\common.vb" />
+    <Compile Include="Utility\Emailer.vb" />
+    <Compile Include="Utility\ErrorSummary.vb" />
+    <Compile Include="CLF\CLF.Master.designer.vb">
+      <DependentUpon>CLF.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CLF\CLF.Master.vb">
+      <DependentUpon>CLF.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DAL\SWRepository.vb" />
+    <Compile Include="DAL\Mappers\NOIProjectMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionPersonOrgMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionStatusCodeMapper.vb" />
+    <Compile Include="DAL\Mappers\NOISubmissionStatusMapper.vb" />
+    <Compile Include="DAL\NOIDB.vb" />
+    <Compile Include="Entity\NOIenums.vb" />
+    <Compile Include="Entity\ErrorLog.vb" />
+    <Compile Include="Entity\NOIFeeExemption.vb" />
+    <Compile Include="Entity\NOIProject.vb" />
+    <Compile Include="Entity\NOISigningEmailAddress.vb" />
+    <Compile Include="Entity\NOISubmission.vb" />
+    <Compile Include="Entity\NOISubmissionPersonOrg.vb" />
+    <Compile Include="Entity\NOISubmissionStatus.vb" />
+    <Compile Include="Entity\NOISubmissionStatusCode.vb" />
+    <Compile Include="Entity\CompanyTypelst.vb" />
+    <Compile Include="Entity\PlanApprovalAgency.vb" />
+    <Compile Include="Entity\ProjectTypelst.vb" />
+    <Compile Include="Entity\StateAbvlst.vb" />
+    <Compile Include="Entity\TaxKentHundred.vb" />
+    <Compile Include="Entity\TaxKentTown.vb" />
+    <Compile Include="Entity\NOISessionStorage.vb" />
+    <Compile Include="Entity\NOISubmissionSearchlst.vb" />
+    <Compile Include="Forms\CoPermitteApplication.aspx.designer.vb">
+      <DependentUpon>CoPermitteApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CoPermitteApplication.aspx.vb">
+      <DependentUpon>CoPermitteApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.aspx.designer.vb">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main.aspx.vb">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\NOIApplication.aspx.designer.vb">
+      <DependentUpon>NOIApplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NOIApplication.aspx.vb">
+      <DependentUpon>NOIApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\NOTCoPermittee.aspx.designer.vb">
+      <DependentUpon>NOTCoPermittee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NOTCoPermittee.aspx.vb">
+      <DependentUpon>NOTCoPermittee.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\NOTGeneralPermit.aspx.designer.vb">
+      <DependentUpon>NOTGeneralPermit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NOTGeneralPermit.aspx.vb">
+      <DependentUpon>NOTGeneralPermit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.vb">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interfaces.vb" />
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UserControls\ucNameAddressInfo.ascx.designer.vb">
+      <DependentUpon>ucNameAddressInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucNameAddressInfo.ascx.vb">
+      <DependentUpon>ucNameAddressInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTaxParcelAdd.ascx.designer.vb">
+      <DependentUpon>ucTaxParcelAdd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucTaxParcelAdd.ascx.vb">
+      <DependentUpon>ucTaxParcelAdd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTaxParcelNewCastle.ascx.designer.vb">
+      <DependentUpon>ucTaxParcelNewCastle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucTaxParcelNewCastle.ascx.vb">
+      <DependentUpon>ucTaxParcelNewCastle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTaxParcelKent.ascx.designer.vb">
+      <DependentUpon>ucTaxParcelKent.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucTaxParcelKent.ascx.vb">
+      <DependentUpon>ucTaxParcelKent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTaxParcelSussex.ascx.designer.vb">
+      <DependentUpon>ucTaxParcelSussex.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucTaxParcelSussex.ascx.vb">
+      <DependentUpon>ucTaxParcelSussex.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utility\NOIReports.vb" />
+    <Compile Include="Utility\Payment.vb" />
+    <Compile Include="Forms\ViewReport.ashx.vb">
+      <DependentUpon>ViewReport.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\RemotePost.vb" />
+    <Compile Include="Web References\OnlinePay\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ReportServerDMZ\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsCROMTOM\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\AgreementCert.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\wsCROMTOM\wsCROMTOM.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ReportServerIP/ReportServer/ReportExecution2005.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReportServerDMZ\</RelPath>
+      <UpdateFromURL>http://ReportServerIP/ReportServer/ReportExecution2005.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NoticeOfIntent_ReportServerDMZ_ReportExecutionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://DMZServer/CROMTOMService//wsCROMTOM.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsCROMTOM\</RelPath>
+      <UpdateFromURL>https://DMZServer/CROMTOMService//wsCROMTOM.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NoticeOfIntent_wsCROMTOM_wsCROMTOM</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://DMZServer/onlinepay/onlinepay.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\OnlinePay\</RelPath>
+      <UpdateFromURL>https://DMZServer/onlinepay/onlinepay.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NoticeOfIntent_OnlinePay_OnlinePayService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseAdmin|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>NoticeOfIntent.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugAdmin|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>NoticeOfIntent.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>NoticeOfIntent.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DevAdmin|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>NoticeOfIntent.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>NoticeOfIntent.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestAdmin|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>NoticeOfIntent.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52609</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55816</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,66 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/CLF/CLF.Master" AutoEventWireup="false" CodeBehind="GeneralNested.master.vb" Inherits="NoticeOfIntent.GeneralNested" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="CSS/agency_custom_styles.css" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="NestedContentPlaceHolderHeader" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ContentPlaceHolder ID="NestedContentPlaceHolderPageTitle" runat="server">
+
+    </asp:ContentPlaceHolder>
+        <asp:ScriptManager ID="ScriptManager1" EnablePageMethods="true" runat="server"></asp:ScriptManager>
+    <asp:ContentPlaceHolder ID="NestedContentPlaceHolderBody" runat="server">
+
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderJS" runat="server">
+    <script src="<%=ResolveUrl("~/Scripts/modernizr-2.8.3.js")%>"></script>
+        <%--<script src="<%=ResolveUrl("~/Scripts/jquery-3.4.1.js")%>"></script>--%>
+        <script src="<%=ResolveUrl("~/Scripts/jquery-ui-1.12.1.js")%>"></script>
+        <script src="<%=ResolveUrl("~/Scripts/jquery.mask.js")%>"></script>
+<%--        <script src="<%=ResolveUrl("~/CLF/js/bootstrap.min.js")%>"></script>--%>
+        <%--<script src="https://js.arcgis.com/3.13/"></script>--%>
+        <%--<script src="<%= ResolveUrl("~/MapJS/init.js")%>"></script>--%>
+
+        <script type="text/javascript" >
+            //dojo.require("esri.map");
+            //dojo.require("dijit.Dialog");
+            //dojo.require("dijit.TooltipDialog");
+            //dojo.require("esri.tasks.locator");
+            //dojo.require("dijit.form.Button");
+            //dojo.require("esri.toolbars.navigation");
+            //dojo.require("dijit.Toolbar");
+            //dojo.require("esri.tasks.geometry");
+            //dojo.require("dijit.layout.BorderContainer");
+            //dojo.require("dijit.layout.ContentPane");
+            //dojo.require("esri.toolbars.edit");
+            //dojo.require("esri.geometry");
+            //dojo.require("esri.geometry.webMercatorUtils");
+            //dojo.require("esri.geometry.Point");
+
+            $(document).ready(function () {
+                //alert("master ready");
+
+                //Modernizr.load({
+                //    test: Modernizr.inputtypes.date,d
+                //    nope: "Scripts/jquery-ui-1.11.4.min.js",
+                //    callback: function () {
+                //        $("input[type=date]").datepicker({ dateFormat: "mm/dd/yy", changeMonth: true, changeYear: true, constrainInput: true });
+                //    }
+                //});
+                //jQuery.noConflict();
+
+                $('.datepicker').mask("99-99-9999", { placeholder: "mm-dd-yyyy" });
+                $('.datepicker').datepicker({ dateFormat: "mm-dd-yy", changeMonth: true, changeYear: true, constrainInput: true });
+
+
+            })
+
+
+        </script>
+
+    <asp:ContentPlaceHolder ID="NestedContentPlaceHolderJS" runat="server">
+
+    </asp:ContentPlaceHolder>
+</asp:Content>

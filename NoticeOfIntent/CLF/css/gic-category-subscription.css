@@ -1,0 +1,142 @@
+.ty-title{
+
+border-top:1px solid #0866ae !important;
+border-bottom:1px solid #0866ae !important;
+padding:10px 0px 10px 0px;
+background-color:#FFF;
+width: 60%;
+margin: 15px auto;
+}
+.ty-title h3{
+	font-weight:700 !important;
+	font-size:6em  !important;
+	letter-spacing: 10px;
+}
+.ty-title h4{
+    font-weight: 700 !important;
+    font-size: 4.4em !important;
+    color: #777;
+}
+
+.ty-para-first{
+    color: #0866ae !important;
+    font-weight: 700;
+    font-size: 3em !important;
+}
+.ty-para-second {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    line-height: 2em;
+}
+.uns-title{
+	text-align: center;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  
+  .ty-title{
+	width: 80%;
+	}
+	.ty-title h3{
+		font-weight:700 !important;
+		font-size:5em  !important;
+		letter-spacing: 7px;
+	}
+	.ty-title h4{
+	    font-weight: 500 !important;
+	    font-size: 3em !important;
+	}
+
+	.ty-para-first{
+	    font-weight: 500;
+	    font-size: 3em !important;
+	}
+	.ty-para-second {
+	    font-size: 18px;
+	    line-height: 1.5em;
+	}
+  
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+   .ty-title{
+	width: 80%;
+	}
+	.ty-title h3{
+		font-weight: 600 !important;
+	    font-size: 4em !important;
+	    letter-spacing: 2px;
+	}
+	.ty-title h4{
+	    font-weight: 500 !important;
+    	font-size: 2.5em !important;
+	}
+
+	.ty-para-first{
+	    font-weight: 500;
+	    font-size: 2em !important;
+	}
+	.ty-para-second {
+	    font-size: 18px;
+	    line-height: 1.5em;
+	}
+
+  
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+   .ty-title{
+	width: 90%;
+	}
+	.ty-title h3{
+		font-weight:500 !important;
+		font-size:3em  !important;
+		letter-spacing: 7px;
+	}
+	.ty-title h4{
+	    font-weight: 500 !important;
+	    font-size: 2.4em !important;
+	}
+
+	.ty-para-first{
+	    font-weight: 500;
+	    font-size: 2em !important;
+	}
+	.ty-para-second {
+	    font-size: 18px;
+	    line-height: 1em;
+	}
+  
+}
+
+/*style.css*/
+@media only screen and (min-width : 320px) {
+.subscribe-wrapper {
+border:2px solid #dce9f4 !important;
+padding:10px;
+}
+.subscribe-wrapper label {
+font-weight:700;
+color:#0866ae;
+font-size:18px;
+}
+.subscribe-wrapper .label-primary {
+background-color:#157efb;
+}
+.subscribe-wrapper .label-warning {
+background-color:#fdc02f;
+color:#4a4a4a;
+}
+.subscribe-wrapper .form-control {
+background-color:#FFF !important;
+}
+.topicBlock {
+height: inherit;
+margin-top: 15px;
+margin-left: 20px;
+margin-bottom: 15px;
+border: 2px solid #dcdcdc;
+background: #FFF;
+padding: 10px;
+}}
+/* Small Devices, Tablets */

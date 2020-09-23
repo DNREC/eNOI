@@ -1,0 +1,75 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/CLF/CLF.Master" AutoEventWireup="false" CodeBehind="CLFNested.master.vb" Inherits="NoticeOfIntent.CLFNested" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../CSS/agency_custom_styles.css" rel="stylesheet">
+    <script src="<%=ResolveUrl("~/Scripts/modernizr-2.8.3.js")%>"></script>
+        <%--<script src="<%=ResolveUrl("~/Scripts/jquery-3.4.1.js")%>"></script>--%>
+        <script src="<%=ResolveUrl("~/Scripts/jquery-ui-1.12.1.js")%>"></script>
+        <script src="<%=ResolveUrl("~/Scripts/jquery.mask.js")%>"></script>
+    <asp:ContentPlaceHolder ID="NestedContentPlaceHolderHeader" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><asp:LinkButton ID="lnkHome" runat="server" >Home</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="lnkSubmissions" runat="server" >Submissions</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="lnkProjectDet" runat="server">Project Details</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="lnkExemption" runat="server">Manage Fee Exemption</asp:LinkButton></li>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><asp:LinkButton ID="lnkDocMng" runat="server" >Document Management</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="lnkLogout" runat="server">Logout</asp:LinkButton></li>                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <asp:ContentPlaceHolder ID="NestedContentPlaceHolderPageTitle" runat="server">
+
+    </asp:ContentPlaceHolder>
+    <asp:ScriptManager ID="ScriptManager1" EnablePageMethods="true" runat="server"></asp:ScriptManager>
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger" ShowModelStateErrors="true" EnableClientScript="true" DisplayMode="BulletList" HeaderText="<div class='validationheader'>&nbsp;Please correct the following error:</div>" ValidationGroup="ValidateNOI" />
+    <asp:ContentPlaceHolder ID="NestedContentPlaceHolderBody" runat="server">
+
+    </asp:ContentPlaceHolder>
+    <div id="footer">
+        <div class="container">
+            <div class="text-muted">
+                Contact <asp:Label ID="lblAdminDeptName" runat="server" Text=""></asp:Label> <asp:Label ID="lblAdminPhone" runat="server" Text=""></asp:Label> or <asp:HyperLink ID="hlAdminEmail" runat="server"></asp:HyperLink>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderJS" runat="server">
+   
+
+        <script type="text/javascript" >
+   
+            $(document).ready(function () {
+                //alert("nest master ready");
+
+                //Modernizr.load({
+                //    test: Modernizr.inputtypes.date,d
+                //    nope: "Scripts/jquery-ui-1.11.4.min.js",
+                //    callback: function () {
+                //        $("input[type=date]").datepicker({ dateFormat: "mm/dd/yy", changeMonth: true, changeYear: true, constrainInput: true });
+                //    }
+                //});
+                //jQuery.noConflict();
+                                $('.datepicker').mask("99-99-9999", { placeholder: "mm-dd-yyyy" });
+                                $('.datepicker').datepicker({ dateFormat: "mm-dd-yy", changeMonth: true, changeYear: true, constrainInput: true });
+               
+            })
+
+
+
+
+        </script>
+
+    <asp:ContentPlaceHolder ID="NestedContentPlaceHolderJS" runat="server">
+
+    </asp:ContentPlaceHolder>
+</asp:Content>

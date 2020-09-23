@@ -1,0 +1,1030 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="CLF.master.vb" Inherits="NoticeOfIntent.CLF" %>
+
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />      
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="/CLF/img/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/CLF/img/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/CLF/img/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/CLF/img/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/CLF/img/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/CLF/img/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/CLF/img/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/CLF/img/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/CLF/img/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/CLF/img/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/CLF/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/CLF/img/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/CLF/img/favicon-16x16.png"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="/CLF/img/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Optional unless you want your site to behave like a progressive web app -->
+<%--    <link rel="manifest" href="/CLF/img/manifest.json"> --%>
+
+    <meta class="swiftype" name="domain" data-type="string" content="dnrec" />
+    <meta
+      class="swiftype"
+      name="published_at"
+      data-type="date"
+      content="2020-06-15"
+    />
+
+    <title><%= PageTitle %></title>
+    
+    <link
+      rel="canonical"
+      href="https://eNOI"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="eNOI - Notice of Intent"
+    />
+    <meta
+      property="og:description"
+      content="This web site allows you to submit the Storm Water Discharges Associated with CONSTRUCTION ACTIVITY under a NPDES General Permit electronically."
+    />
+    <meta
+      property="og:url"
+      content="https://eNOI"
+    />
+    <meta property="og:site_name" content="eNOI - Notice of Intent" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:description"
+      content="This web site allows you to submit the Storm Water Discharges Associated with CONSTRUCTION ACTIVITY under a NPDES General Permit electronically."
+    />
+    <meta
+      name="twitter:title"
+      content="eNOI - Notice of Intent"
+    />
+    <!-- / Yoast SEO plugin. -->
+
+    <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com" />
+    <link rel="dns-prefetch" href="//f1-na.readspeaker.com" />
+    <link rel="dns-prefetch" href="//use.fontawesome.com" />
+    <link rel="dns-prefetch" href="//delaware.gov" />
+    <link rel="dns-prefetch" href="//unpkg.com" />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//s.w.org" />
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="/CLF/css/style.min.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="wp-block-library-theme-css"
+      href="/CLF/css/theme.min.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="mo_saml_admin_settings_style-css"
+      href="/CLF/css/jquery.ui.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="eme-jquery-fdatepicker-css"
+      href="/CLF/css/fdatepicker.min.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="eme-jquery-ui-css-css"
+      href="/CLF/css/jquery-ui.min.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="eme-jquery-ui-autocomplete-css"
+      href="/CLF/css/jquery.autocomplete.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="eme-jquery-select2-css-css"
+      href="/CLF/css/select2.min.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="eme_stylesheet-css"
+      href="/CLF/css/eme.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="eme-leaflet-css-css"
+      href="/CLF/css/leaflet.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="bootstrap-css"
+      href="/CLF/css/bootstrap.min.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="wp-styles-css"
+      href="/CLF/css/style.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="google-fonts-css"
+      href="//fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%2C800%7COpen+Sans+Condensed%3A300%7CMontserrat%3A400%2C700&#038;ver=all"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="gic-category-subscription.css-css"
+      href="/CLF/css/gic-category-subscription.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <script type="text/javascript" src="/CLF/js/jquery.js"></script>
+    <script type="text/javascript" src="/CLF/js/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/settings.js"></script>
+    <script
+      type="text/javascript"
+      src="//delaware.gov/files/pullnews.php?blog=news.delaware.gov&#038;category=dnrec=&#038;num=3&#038;type=js&#038;from=1&#038;to=3&#038;var=html1"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//delaware.gov/files/pullnews.php?blog=news.delaware.gov&#038;category=dnrec=&#038;num=3&#038;type=js&#038;from=4&#038;to=6&#038;var=html2"
+    ></script>
+         
+    <script type="text/javascript" src="/CLF/js/browser.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/react.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/moment.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/axios.js"></script>
+    <link
+      rel="EditURI"
+      type="application/rsd+xml"
+      title="RSD"
+      href="https://dnrec.alpha.delaware.gov/xmlrpc.php?rsd"
+    />
+    <link
+      rel="wlwmanifest"
+      type="application/wlwmanifest+xml"
+      href="https://dnrec.alpha.delaware.gov/wp-includes/wlwmanifest.xml"
+    />
+    <meta name="generator" content="WordPress 5.3.2" />
+    <link rel="shortlink" href="https://dnrec.alpha.delaware.gov/?p=16110" />
+    <link
+      rel="alternate"
+      type="application/json+oembed"
+      href="https://dnrec.alpha.delaware.gov/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdnrec.alpha.delaware.gov%2Fwatershed-stewardship%2Fassessment%2Frecreational-water-monitoring%2F"
+    />
+    <link
+      rel="alternate"
+      type="text/xml+oembed"
+      href="https://dnrec.alpha.delaware.gov/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdnrec.alpha.delaware.gov%2Fwatershed-stewardship%2Fassessment%2Frecreational-water-monitoring%2F&#038;format=xml"
+    />
+    <style type="text/css">
+      .recentcomments a {
+        display: inline !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+    </style>
+      <!-- ArcGIS theme -->
+  <!--  <link rel="stylesheet"
+          href="https://js.arcgis.com/4.14/esri/themes/dark/main.css" />
+    [if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <script>
+        FontAwesomeConfig = { searchPseudoElements: true };
+    </script>
+
+    <!-- FUNNELBACK INCLUDES -->
+    <link
+      type="text/css"
+      media="screen"
+      rel="stylesheet"
+      href="/CLF/css/funnelback.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/CLF/css/funnelback.autocompletion-2.6.0.css"
+    />
+    <script src="/CLF/js/funnelbackConfig.js"></script>
+    <script src="/CLF/js/typeahead.bundle-0.11.1.min.js"></script>
+    <script src="/CLF/js/handlebars-4.0.5.min.js"></script>
+    <script src="/CLF/js/funnelback.autocompletion-2.6.0.js"></script>
+    <!-- END FUNNELBACK INCLUDES -->
+
+    <!-- Analytics only on delaware.gov hosts -->
+    <script>
+        if (location.host.match(/(^[A-Za-z0-9]+)\.dnrec\.delaware\.gov/g)) {
+            (function (i, s, o, g, r, a, m) {
+                i["GoogleAnalyticsObject"] = r;
+                (i[r] =
+                    i[r] ||
+                    function () {
+                        (i[r].q = i[r].q || []).push(arguments);
+                    }),
+                    (i[r].l = 1 * new Date());
+                (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m);
+            })(
+                window,
+                document,
+                "script",
+                "https://www.google-analytics.com/analytics.js",
+                "ga"
+            );
+
+            ga("create", "UA-86740757-1", "auto");
+            ga("send", "pageview");
+        }
+    </script>
+     <style>
+      #agencyFooter {
+        position: relative;
+      }
+
+      .toggle-footer-btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server"> </asp:ContentPlaceHolder>
+  </head>
+    
+  <body
+    class="page-template page-template-watershed-menu page-template-watershed-menu-php page page-id-16110 page-parent page-child parent-pageid-16114 wp-embed-responsive"
+  >
+    <!-- BEGIN Fixed Main Nav Bar -->
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-nav">
+        <div class="navbar-header">
+          <a class="skip-main" href="#main_content">Skip to Content</a>
+          <a class="skip-main" href="#agencyFooter">Skip to Navigation</a>
+          <a href="https://delaware.gov"
+            ><img
+              src="/CLF/img/delaware_global_d@2x.png"
+              alt="The Delaware.gov logo"
+              class="border_none delaware_d_logo"
+          /></a>
+          <a href="https://delaware.gov"
+            ><img
+              src="/CLF/img/delaware_global_text@2x.png"
+              alt="Delaware.gov - The Offical Website of the First State"
+              class="border_none delaware_text"
+          /></a>
+        </div>
+        <ul class="nav masthead-nav hidden-xs">
+          <li>
+            <a
+              target="_blank"
+              href="https://delaware.gov/topics/agencylist_alpha"
+              ><i class="far fa-building fa-fw"></i> Agencies</a
+            >
+          </li>
+          <li>
+            <a target="_blank" href="https://news.delaware.gov"
+              ><i class="fa fa-newspaper-o fa-fw"></i> News</a
+            >
+          </li>
+          <li>
+            <a target="_blank" href="https://delaware.gov/topics"
+              ><i class="fa fa-comments-o fa-fw"></i> Topics</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://delaware.gov/help/degov-contact.shtml"
+              ><i class="fa fa-mobile fa-fw"></i> Contact</a
+            >
+          </li>
+        </ul>
+        <!-- Search is disabled, unless you need it <div id="sb-search-main" class="sb-search-main pull-right">
+            <form>
+                <label for="txtKeywordMain">Search This Site</label>
+                <input class="sb-search-main-input" placeholder="Search This Site" type="text" value="" name="query" id="txtKeywordMain" />
+                <input class="sb-search-main-submit" type="submit" value="Submit" />
+                <span class="sb-icon-main-search"><i class="fa fa-search fa-fw"></i></span>
+            </form>
+        </div> -->
+      </div>
+    </nav>
+    <!-- END Fixed Main Nav Bar -->
+    <!-- EMERGENCY NOTIFICATION SYSTEM (ENS) AREA -->
+    <div id="ens" class="alert alert-danger">
+      <a type="button" class="close" data-dismiss="alert" aria-label="Close"
+        ><span aria-hidden="true"><i class="fa fa-times fa-fw"></i></span
+      ></a>
+      <p>
+        <strong>
+          <i class="fa fa-exclamation-circle fa-lg fa-fw"></i> Doing business
+          with DNREC during the coronavirus period.
+          <a target="_blank" href="https://dnrec.alpha.delaware.gov/coronavirus/">
+            More Info<i class="fa fa-long-arrow-right fa-fw"></i
+          ></a>
+        </strong>
+      </p>
+    </div>
+    <!-- END EMERGENCY NOTIFICATION AREA -->
+<!-- AGENCY TOP NAVIGATION -->
+<div id="cssmenuTop" data-spy="affix" data-offset-top="60" class="affix">
+  <div id="cssmenu">
+    <ul id="menu-dnrec-top-navigation" class="nav navbar-nav"><li id="menu-item-5061" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5061"><a href="/"><img src="/CLF/img/dnrec-midpage-logo.png" class="nav_logo" alt="DNREC Logo" width="41" height="25"></a></li>
+<li id="menu-item-5058" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5058 dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Divisions <span class="caret"></span></a>
+<ul role="menu">
+	<li id="menu-item-12483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12483"><a href="https://dnrec.alpha.delaware.gov/office-of-the-secretary/">Office of the Secretary</a></li>
+	<li id="menu-item-12485" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12485"><a href="https://dnrec.alpha.delaware.gov/community-services/">Division of Community Affairs</a></li>
+	<li id="menu-item-12484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12484"><a href="https://dnrec.alpha.delaware.gov/climate-coastal-energy/">Division of Climate, Coastal, &#038; Energy</a></li>
+	<li id="menu-item-12486" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12486"><a href="https://dnrec.alpha.delaware.gov/air/">Division of Air Quality</a></li>
+	<li id="menu-item-12487" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12487"><a href="https://dnrec.alpha.delaware.gov/water/">Division of Water</a></li>
+	<li id="menu-item-12488" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12488"><a href="https://dnrec.alpha.delaware.gov/waste-hazardous/">Division of Waste and Hazardous Substances</a></li>
+	<li id="menu-item-12489" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12489"><a href="https://dnrec.alpha.delaware.gov/fish-wildlife/">Division of Fish &#038; Wildlife</a></li>
+	<li id="menu-item-12490" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12490"><a href="https://dnrec.alpha.delaware.gov/parks/">Division of Parks &#038; Recreation</a></li>
+	<li id="menu-item-12491" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12491"><a href="https://dnrec.alpha.delaware.gov/watershed-stewardship/">Division of Watershed Stewardship</a></li>
+</ul>
+</li>
+<li id="menu-item-5060" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5060 dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">About DNREC <span class="caret"></span></a>
+<ul role="menu">
+	<li id="menu-item-5096" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5096"><a href="https://dnrec.alpha.delaware.gov/mission/">Vision and Mission</a></li>
+	<li id="menu-item-5078" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5078"><a href="https://dnrec.alpha.delaware.gov/divisions/">DNREC Divisions</a></li>
+	<li id="menu-item-11660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11660"><a href="https://dnrec.alpha.delaware.gov/boards-councils-committees/">Boards &#038; Councils</a></li>
+	<li id="menu-item-5076" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5076"><a href="https://dnrec.alpha.delaware.gov/topics-of-interest/">Topics of Interest</a></li>
+	<li id="menu-item-10093" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10093"><a href="https://dnrec.alpha.delaware.gov/public-meeting-calendars/">DNREC Calendar</a></li>
+	<li id="menu-item-5080" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5080"><a href="https://dnrec.alpha.delaware.gov/dnrec-open-data/">Open Data</a></li>
+	<li id="menu-item-7341" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7341"><a href="https://dnrec.alpha.delaware.gov/environmental-perspectives/">Environmental Perspectives</a></li>
+	<li id="menu-item-5093" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5093"><a href="https://dnrec.alpha.delaware.gov/online-applications/">Online Apps</a></li>
+	<li id="menu-item-5098" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5098"><a href="https://dnrec.alpha.delaware.gov/dnrec-e-mail-lists/">E-Mail Lists</a></li>
+	<li id="menu-item-5079" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5079"><a href="https://dnrec.alpha.delaware.gov/dnrec-social-media/">Social Media</a></li>
+	<li id="menu-item-7690" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7690"><a href="https://dnrec.alpha.delaware.gov/new-employee-orientation/">New Employee Orientation</a></li>
+	<li id="menu-item-9490" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9490"><a href="https://dnrec.alpha.delaware.gov/volunteer-with-dnrec/">Volunteer with Us</a></li>
+	<li id="menu-item-5102" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5102"><a href="https://dnrec.alpha.delaware.gov/improving-dnrec/">Making Things Better</a></li>
+	<li id="menu-item-6176" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6176"><a href="https://dnrec.alpha.delaware.gov/coastal-zone-act/">Coastal Zone Act</a></li>
+	<li id="menu-item-6931" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6931"><a href="https://dnrec.alpha.delaware.gov/dnrec-capital-plan/">DNREC Capital Plan</a></li>
+</ul>
+</li>
+<li id="menu-item-5065" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5065 dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin. Law <span class="caret"></span></a>
+<ul role="menu">
+	<li id="menu-item-10088" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10088"><a href="https://dnrec.alpha.delaware.gov/secretarys-orders/">Secretary&#8217;s Orders</a></li>
+	<li id="menu-item-10445" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10445"><a href="https://dnrec.alpha.delaware.gov/dnrec-public-notices/">Public Notices</a></li>
+	<li id="menu-item-5095" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5095"><a href="https://dnrec.alpha.delaware.gov/public-meeting-calendars/">Public Meetings</a></li>
+	<li id="menu-item-9886" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9886"><a href="https://dnrec.alpha.delaware.gov/public-hearings/">Public Hearings</a></li>
+	<li id="menu-item-5094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5094"><a href="https://dnrec.alpha.delaware.gov/dnrec-regulations/">Regulations</a></li>
+	<li id="menu-item-5617" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5617"><a href="https://dnrec.alpha.delaware.gov/environmental-appeals-board/">Environmental Appeals Board</a></li>
+	<li id="menu-item-10101" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10101"><a href="https://dnrec.alpha.delaware.gov/coastal-zone-act/industrial-control-board/">Coastal Zone Industrial Control Board</a></li>
+	<li id="menu-item-5092" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5092"><a href="https://dnrec.alpha.delaware.gov/foia/">FOIA Requests</a></li>
+</ul>
+</li>
+<li id="menu-item-5255" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5255"><a href="https://dnrec.alpha.delaware.gov/newsroom/">Newsroom</a></li>
+<li id="menu-item-5311" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5311"><a href="https://dnrec.alpha.delaware.gov/contacts/">Contact Us</a></li>
+</ul>    <div id="agencyitems">
+      <a href="http://delaware.gov"><img src="/CLF/img/delaware_global_d_blue@2x.png" class="logo_fade hidden-xs" alt="Delaware 'D' logo" />
+      <img src="/CLF/img/delaware_global_text_blue@2x.png" class="delaware_fade" alt="Delaware.gov logo" /></a>
+      <p class="menu_text">DNREC Menu</p>
+      <!-- Mobile search? <div id="sb-search" class="sb-search pull-right">
+        <form id="agency-search">
+          <label for="txtKeyword">Search This Site</label>
+          <input class="sb-search-input" placeholder="Search This Site" type="text" value="" name="query" id="txtKeyword" />
+          <input class="sb-search-submit" type="submit" value="Search" />
+          <span class="sb-icon-search"><i class="fa fa-search fa-fw"></i></span>
+        </form>
+      </div> -->
+    </div>
+  </div>
+</div><!-- END AGENCY TOP NAVIGATION -->
+    <div class="offset-div"></div>
+    <br />
+    <div id="content-wrapper">
+      <br />
+      <div class="container">
+        <div id="main_content">
+          <form id="Form1" class="container" runat="server">
+            <div>
+              <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+              </asp:ContentPlaceHolder>
+            </div>
+          </form>
+        </div>
+        <br />
+      </div>
+    </div>
+    <!-- content-wrapper -->
+    <!-- BEGIN Footer -->
+    <div id="agencyFooter">
+      <div class="container">
+        <span class="hidden-sm"><br /></span>
+        <div class="row">
+          <div class="col-sm-3">
+            <a href="/"
+              ><img
+                src="/CLF/img/dnrec-logo.png"
+                alt="Delaware Natural Resources and Environmental Control"
+                class="agencyFooter_logo center-block" /></a
+            ><br />
+            <h2 class="text-uppercase text-center">Divisions</h2>
+          </div>
+          <div class="col-sm-3">
+            <div class="menu-dnrec-top-footer-left-column-container">
+              <ul id="menu-dnrec-top-footer-left-column" class="menu">
+                <li
+                  id="menu-item-7031"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7031"
+                >
+                  <a
+                    href="https://dnrec.alpha.delaware.gov/office-of-the-secretary/"
+                    >Office of the Secretary</a
+                  >
+                </li>
+                <li
+                  id="menu-item-6720"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6720"
+                >
+                  <a
+                    href="https://dnrec.alpha.delaware.gov/environmental-finance/"
+                    >Environmental Finance</a
+                  >
+                </li>
+                <li
+                  id="menu-item-5139"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5139"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/community-services/"
+                    >Division of Community Affairs</a
+                  >
+                </li>
+                <li
+                  id="menu-item-5497"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5497"
+                >
+                  <a
+                    href="https://dnrec.alpha.delaware.gov/climate-coastal-energy/"
+                    >Division of Climate, Coastal, &#038; Energy</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="menu-dnrec-top-footer-middle-column-container">
+              <ul id="menu-dnrec-top-footer-middle-column" class="menu">
+                <li
+                  id="menu-item-7032"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7032"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/air/"
+                    >Division of Air Quality</a
+                  >
+                </li>
+                <li
+                  id="menu-item-7033"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7033"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/water/"
+                    >Division of Water</a
+                  >
+                </li>
+                <li
+                  id="menu-item-5054"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5054"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/water/waste-hazardous/"
+                    >Division of Waste and Hazardous Substances</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="menu-dnrec-top-footer-right-column-container">
+              <ul id="menu-dnrec-top-footer-right-column" class="menu">
+                <li
+                  id="menu-item-5055"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5055"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/fish-wildlife/">Division of Fish &#038; Wildlife</a>
+                </li>
+                <li
+                  id="menu-item-5056"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5056"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/parks/">Division of Parks and Recreation</a>
+                </li>
+                <li
+                  id="menu-item-5057"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5057"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/watershed-stewardship/"
+                    >Division of Watershed Stewardship</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <br />
+        <hr class="clf" />
+        <div class="row">
+          <div class="col-sm-3">
+            <p class="text-center">
+              <a target="_blank" href="https://www.facebook.com/DNREC/"
+                ><i
+                  class="fab fa-facebook-square fa-fw fa-2x"
+                  aria-hidden="true"
+                ></i></a
+              >&nbsp;&nbsp;<a
+                target="_blank"
+                href="https://twitter.com/YourDNREC"
+                ><i
+                  class="fab fa-twitter-square fa-fw fa-2x"
+                  aria-hidden="true"
+                ></i></a
+              >&nbsp;&nbsp;<a
+                target="_blank"
+                href="https://www.youtube.com/user/DelawareDNREC"
+                ><i
+                  class="fab fa-youtube-square fa-fw fa-2x"
+                  aria-hidden="true"
+                ></i
+              ></a>
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <div class="menu-dnrec-sub-footer-left-column-container">
+              <ul id="menu-dnrec-sub-footer-left-column" class="menu">
+                <li
+                  id="menu-item-5090"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5090"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/topics-of-interest/"
+                    >Topics of Interest</a
+                  >
+                </li>
+                <li
+                  id="menu-item-5109"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5109"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/contacts/"
+                    >Contact Us</a
+                  >
+                </li>
+                <li
+                  id="menu-item-5256"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5256"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/newsroom/"
+                    >DNREC Newsroom</a
+                  >
+                </li>
+                <li
+                  id="menu-item-5091"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5091"
+                >
+                  <a
+                    href="https://dnrec.alpha.delaware.gov/public-meeting-calendars/"
+                    >Public Meetings</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="menu-dnrec-sub-footer-middle-column-container">
+              <ul id="menu-dnrec-sub-footer-middle-column" class="menu">
+                <li
+                  id="menu-item-5105"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5105"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/mission/"
+                    >About DNREC</a
+                  >
+                </li>
+                <li
+                  id="menu-item-5111"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5111"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/divisions/"
+                    >DNREC Divisions</a
+                  >
+                </li>
+                <li
+                  id="menu-item-5104"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5104"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/dnrec-regulations/"
+                    >Regulations</a
+                  >
+                </li>
+                <li
+                  id="menu-item-5049"
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5049"
+                >
+                  <a
+                    href="http://delawarestatejobs.com/search/jobs.aspx?srch=dnrec&#038;sort=agency&#038;sortdir=1&#038;loc="
+                    >Employment</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="menu-dnrec-sub-footer-right-column-container">
+              <ul id="menu-dnrec-sub-footer-right-column" class="menu">
+                <li
+                  id="menu-item-5107"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5107"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/improving-dnrec/"
+                    >DNREC Improvements</a
+                  >
+                </li>
+                <li
+                  id="menu-item-10448"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10448"
+                >
+                  <a
+                    href="https://dnrec.alpha.delaware.gov/dnrec-public-notices/"
+                    >Public Notices</a
+                  >
+                </li>
+                <li
+                  id="menu-item-5108"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5108"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/dnrec-open-data/"
+                    >DNREC Open Data</a
+                  >
+                </li>
+                <li
+                  id="menu-item-5110"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5110"
+                >
+                  <a href="https://dnrec.alpha.delaware.gov/foia/"
+                    >FOIA Requests</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pull-right"><a href="#" class="toggle-footer-btn">+</a></div>
+    </div>
+    <div id="footer">
+      <div class="container">
+        <h1 class="main_footer">Delaware's Government</h1>
+        <hr />
+        <div class="row">
+          <div class="col-sm-3">
+            <p>
+              <a href="http://governor.delaware.gov">Delaware's Governor</a
+              ><br />
+              <a href="http://delaware.gov/topics/agencylist_alpha"
+                >State Agencies</a
+              ><br />
+              <a href="http://delaware.gov/topics/yourgovernment"
+                >Elected Officials</a
+              ><br />
+              <a href="http://legis.delaware.gov/">General Assembly</a><br />
+              <a href="http://courts.delaware.gov/">Delaware Courts</a><br />
+              <a
+                href="https://dhr.delaware.gov/personnel/employee-resources.shtml"
+                >State Employees</a
+              ><br />
+              <a href="http://delaware.gov/topics/municipalities"
+                >Cities &amp; Towns</a
+              ><br />
+              <a href="http://delcode.delaware.gov/">Delaware State Code</a
+              ><br />
+              <a href="http://regulations.delaware.gov/">State Regulations</a
+              ><br />
+              <!--  <a href="http://governor.delaware.gov/regulatory_review.shtml">Regulatory Review</a> -->
+              <a href="http://firststeps.delaware.gov/">Business First Steps</a>
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <p>
+              <a href="http://delaware.gov/phonedirectory/">Phone Directory</a
+              ><br />
+              <a href="http://delaware.gov/locationsdirectory/"
+                >Locations Directory</a
+              ><br />
+              <a href="https://publicmeetings.delaware.gov/">Public Meetings</a
+              ><br />
+              <a href="http://elections.delaware.gov">Voting &amp; Elections</a
+              ><br />
+              <a href="http://delaware.gov/topics/transparency">Transparency</a
+              ><br />
+              <a href="http://www.choosehealthde.com/">Health Insurance</a
+              ><br />
+              <a href="http://delaware.gov/topics/TaxCenter">Tax Center</a
+              ><br />
+              <a href="http://revenue.delaware.gov/pit_onlinefiling.shtml"
+                >Personal Income Tax</a
+              ><br />
+              <a href="http://delaware.gov/help/privacy">Privacy Policy</a
+              ><br />
+              <a href="http://delaware.gov/topics/weatherpage"
+                >Weather &amp; Travel</a
+              >
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <p>
+              <a href="http://delaware.gov/help/degov-contact.shtml"
+                >Contact Us</a
+              ><br />
+              <a href="http://corp.delaware.gov/">Corporations</a><br />
+              <a href="http://corp.delaware.gov/paytaxes.shtml">Franchise Tax</a
+              ><br />
+              <a href="https://grossreceiptstax.delaware.gov/grtpublic/"
+                >Gross Receipts Tax</a
+              ><br />
+              <a
+                href="https://dorweb.revenue.delaware.gov/EDIOnline/EDIOnline.dll"
+                >Withholding Tax</a
+              ><br />
+              <a href="http://delaware.gov/topics/">Delaware Topics</a><br />
+              <a href="http://delaware.gov/help/">Help Center</a><br />
+              <a href="http://delaware.gov/topics/apps">Mobile Apps</a><br />
+              <a href="http://delaware.gov/topics/subscribeemail"
+                >E-mail / Text Alerts</a
+              ><br />
+              <a href="https://delaware.gov/topics/socialmedia">Social Media</a>
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <img
+              src="/CLF/img/portal_footer_seal.png"
+              alt="State Seal of Delaware"
+              class="hidden-xs img-responsive"
+            />
+          </div>
+        </div>
+        <!-- /.row -->
+        <hr />
+        <div class="row">
+          <div class="col-sm-5 col-md-4 col-lg-4">
+            <div class="social center-block">
+              <div class="social_facebook">
+                <a href="https://www.facebook.com/delaware.gov" target="_blank"
+                  ><i class="fab fa-facebook-square fa-3x"></i
+                ></a>
+              </div>
+              <div class="social_twitter">
+                <a href="https://twitter.com/delaware_gov/" target="_blank"
+                  ><i class="fab fa-twitter-square fa-3x"></i
+                ></a>
+              </div>
+              <div class="social_flickr">
+                <a
+                  href="http://www.flickr.com/groups/delaware_gov/"
+                  target="_blank"
+                  ><i class="fab fa-flickr fa-3x"></i
+                ></a>
+              </div>
+              <div class="social_youtube">
+                <a
+                  href="https://www.youtube.com/user/DelawareGovernment"
+                  target="_blank"
+                  ><i class="fab fa-youtube-square fa-3x"></i
+                ></a>
+              </div>
+              <div class="social_rss">
+                <a
+                  href="https://www.instagram.com/delaware_gov/"
+                  target="_blank"
+                  ><i class="fab fa-instagram fa-3x"></i
+                ></a>
+              </div>
+            </div>
+            <div class="clear"></div>
+            <br />
+          </div>
+          <div class="col-sm-3">
+            <div class="btn-group">
+              <a class="btn btn-default btn-lg decreaseFont" href="#"
+                ><span class="wave_text">Make Text Size Smaler</span
+                ><i class="fas fa-minus"></i
+              ></a>
+              <a class="btn btn-default btn-lg resetFont" href="#"
+                ><span class="wave_text">Reset Text Size</span
+                ><i class="fas fa-font"></i
+              ></a>
+              <a class="btn btn-default btn-lg increaseFont" href="#"
+                ><span class="wave_text">Make Text Size Bigger</span
+                ><i class="fas fa-plus"></i
+              ></a>
+            </div>
+            <br /><br />
+          </div>
+          <div class="col-sm-4 col-md-5 col-lg-5">
+            <img
+              src="/CLF/img/gic_portal_footer_logo@2x.png"
+              alt="Built by the Government Information Center (GIC)"
+              class="footer_logo"
+            />
+            <p>
+              Built by the
+              <a href="http://gic.delaware.gov">Government Information Center</a
+              ><br />
+              &copy;MMXX <a href="http://delaware.gov">Delaware.gov</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="pull-right"><a href="#" class="toggle-footer-btn">-</a></div>
+    </div>
+    <!-- END Footer -->
+    <script type="text/javascript" src="/CLF/js/fdatepicker.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/select2.min.js"></script>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var emebasic = {
+            translate_plugin_url:
+                "https:\/\/dnrec.alpha.delaware.gov\/wp-content\/plugins\/events-made-easy\/",
+            translate_ajax_url:
+                "https:\/\/dnrec.alpha.delaware.gov\/wp-admin\/admin-ajax.php",
+            translate_selectstate: "State",
+            translate_selectcountry: "Country",
+            translate_frontendnonce: "7a296551a4",
+            translate_error: "An error has occurred",
+            translate_clear: "Clear",
+            translate_mailingpreferences: "Mailing preferences",
+            translate_yessure: "Yes, I'm sure",
+            translate_iwantmails: "I want to receive mails",
+            translate_firstDayOfWeek: "0",
+            translate_flanguage: "en",
+            translate_fdateformat: "F j, Y",
+            translate_ftimeformat: "g:i a",
+        };
+      /* ]]> */
+    </script>
+    <script type="text/javascript" defer="defer" src="/CLF/js/eme.js"></script>
+    <script type="text/javascript" src="/CLF/js/core.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/widget.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/mouse.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/resizable.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/draggable.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/button.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/position.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/dialog.min.js"></script>
+    <script type="text/javascript" src="/CLF/js/bootstrap.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://f1-na.readspeaker.com/script/7262/webReader/webReader.js?pids=wr"
+    ></script>
+    <script type="text/javascript" src="/CLF/js/all.js" async="async"></script>
+    <script type="text/javascript" src="/CLF/js/v4-shims.js" async="async"></script>
+    <script type="text/javascript" src="/CLF/js/agency.js"></script>
+<%--    <script type="text/javascript" src="/CLF/js/wp-polyfill.min.js"></script>
+    <script type="text/javascript">
+      "fetch" in window ||
+        document.write(
+          '<script src="/CLF/js/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + "ipt>"
+        );
+      document.contains ||
+        document.write(
+          '<script src="/CLF/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.26.0-0"></scr' +
+            "ipt>"
+        );
+      (window.FormData && window.FormData.prototype.keys) ||
+        document.write(
+          '<script src="/CLF/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' +
+            "ipt>"
+        );
+      (Element.prototype.matches && Element.prototype.closest) ||
+        document.write(
+          '<script src="/CLF/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' +
+            "ipt>"
+        );
+    </script>--%>
+    <script type="text/javascript" src="/CLF/js/react.min.js"></script>
+    <%--<script type="text/javascript" src="/CLF/js/react-dom.min.js"></script>--%>
+    <script type="text/javascript" src="/CLF/js/scripts.js"></script>
+    <script type="text/javascript" src="/CLF/js/wp-embed.min.js"></script>
+
+  <%--   <script src="https://js.arcgis.com/4.14/"></script>
+    <script src="Javascript/initMain.js"></script>
+   <script>
+      new UISearch(document.getElementById("sb-search"));
+    </script>
+    <script>
+      new UISearch(document.getElementById("sb-search-main"));
+    </script>--%>
+       <script>
+           const content = document.getElementById("content-wrapper");
+
+           if (content.scrollHeight < window.innerHeight) {
+               content.style.minHeight = content.offsetHeight + (window.innerHeight - document.body.clientHeight) + "px"
+           }
+</script>
+
+<%--		 <script type="text/javascript">
+             $(document).ready(function () {
+                 jQuery.noConflict();
+             });
+    </script>--%>
+	    <asp:ContentPlaceHolder id="ContentPlaceHolderJS" runat="server">
+            							
+	    </asp:ContentPlaceHolder>
+      
+		<!-- END SCRIPTS -->
+
+  </body>
+</html>
+
+			
+			
+			

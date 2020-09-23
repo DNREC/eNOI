@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="NoticeOfIntent_ReportServerDMZ_ReportExecutionService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ReportServerIP/ReportServer/ReportExecution2005.asmx</Value>
+    </Setting>
+    <Setting Name="NoticeOfIntent_wsCROMTOM_wsCROMTOM" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://DMZ/CROMTOMService/wsCROMTOM.asmx</Value>
+    </Setting>
+    <Setting Name="NoticeOfIntent_OnlinePay_OnlinePayService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://DMZ/onlinepay/onlinepay.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
