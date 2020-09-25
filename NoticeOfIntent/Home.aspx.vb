@@ -31,28 +31,7 @@ Public Class Home
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-
-        ''---------------------Code for testing start-----------------------------------------------
-        'Dim login As New LogInDetails()
-        'With login
-        '    .loginToken = Request.QueryString("Tkt")
-        '    .reportid = Request.QueryString("ReportID")
-        '    .loginToken = Server.UrlEncode("AA0LJYzsho5po2BnzYfPX5a/N9ahfrFneCQjSC5AwJw=")   '"jMPias8SRfAhAx7+t46nVNefV9fSmgut2djWNhlPuvw=" '"CQh/T64/YoWhiMneYxST3zsNC/Xx8ZHk6Aiv8jeYnuQ=" '"login token that is between 50 and 60 characters long."
-        '    '.reportid = 6
-        '    .submissionid = 0
-        '    .user.userFname = "Jay"
-        '    .user.userLname = "Rajagopal"
-        '    .user.userid = "jay"
-        '    .user.fullName = "Rajagopal Jay"
-        '    .user.useremail = "jay.rajagopal@gmail.com"
-        'End With
-        'logInVS = login
-
-        'FormsAuthentication.SetAuthCookie(logInVS.user.userid, False)m
-
-        'responseRedirect("~/Forms/Main.aspx")
-        'Response.Redirect("Login.aspx?Tkt=" & HttpUtility.UrlEncode("m5EsDs1g294td0S822gB6XSYuCVb1q0y++vnNLDzbps=") & "&ReportID=" & Request.QueryString("ReportID").ToString(), False)
-        ''''----------------------Code for testing end------------------------------------
+        
         If ConfigurationManager.AppSettings("dev") = True Then
             Response.Redirect("Login.aspx?Tkt=" & HttpUtility.UrlEncode("G3VEbztSmpJOJATLW8BpV/7SPzZku8M+7xIQfe3rXaE=") & "&ReportID=" & Request.QueryString("ReportID").ToString(), False)
         Else
